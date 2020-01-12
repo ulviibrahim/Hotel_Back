@@ -1,0 +1,435 @@
+@charset "UTF-8";
+.btnLogin, .sub {
+  padding: 8px 25px;
+  border-radius: 2px;
+  background-color: white;
+  transition: all 0.5s; }
+  .btnLogin:hover, .sub:hover {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    border: 1px solid white;
+    background-color: #b99470; }
+
+.fa-facebook-f, .fa-twitter, .fa-instagram, .fa-youtube, .fa-google-plus-g {
+  font-size: 16px;
+  padding: 12px 16px;
+  border-radius: 50%;
+  color: white;
+  background-color: #424242;
+  transition: all .5s; }
+
+.fa-facebook-f {
+  padding: 13px 16px; }
+  .fa-facebook-f:hover {
+    background-color: #3b5998; }
+
+.fa-twitter {
+  padding: 13px 14px; }
+  .fa-twitter:hover {
+    background-color: #00acee; }
+
+.fa-instagram {
+  padding: 14px 16px; }
+  .fa-instagram:hover {
+    background-color: #3f729b; }
+
+.fa-youtube {
+  padding: 14px 14px; }
+  .fa-youtube:hover {
+    background-color: #b2071d; }
+
+.fa-google-plus-g {
+  padding: 13px 13px; }
+  .fa-google-plus-g:hover {
+    background-color: #db4a39; }
+
+.btnLogin {
+  color: #b99470;
+  border: 1px solid #b99470; }
+
+.sub {
+  background-color: #424242; }
+  .sub:hover {
+    background-color: #810515;
+    color: white;
+    border-color: white;
+    cursor: pointer; }
+
+body {
+  font-family: "Cormorant Garamond", serif; }
+
+header {
+  box-shadow: 0px 10px 11px -2px rgba(0, 0, 0, 0.6);
+  background-color: white;
+  padding: 10px; }
+  header #Brand {
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+    color: #424242;
+    position: relative; }
+    header #Brand .brand-child {
+      position: absolute;
+      bottom: -21px;
+      right: -30px; }
+  header #navbarSupportedContent .navbar-nav {
+    margin-left: 15%; }
+    header #navbarSupportedContent .navbar-nav li .nav-link {
+      color: #424242;
+      transition: 0.3s;
+      font-size: 18px;
+      font-weight: 500;
+      position: relative; }
+      header #navbarSupportedContent .navbar-nav li .nav-link::after {
+        content: "";
+        background-color: #b99470;
+        width: 0%;
+        border-radius: 3px;
+        height: 2px;
+        position: absolute;
+        bottom: 0;
+        left: 0; }
+      header #navbarSupportedContent .navbar-nav li .nav-link:hover {
+        color: #61482f; }
+        header #navbarSupportedContent .navbar-nav li .nav-link:hover::after {
+          width: 100%;
+          transition: all 1s; }
+          @media screen and (max-width: 600px) {
+            header #navbarSupportedContent .navbar-nav li .nav-link:hover::after {
+              width: 25%; } }
+  header #navbarSupportedContent .Login span {
+    color: #424242; }
+
+.margin {
+  margin: 70px 0; }
+
+.overlay1 {
+  background-image: url("../img/01-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.overlay2 {
+  background-image: url("../img/slider-2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.overlaypage {
+  text-align: center; }
+  .overlaypage h1 {
+    color: white;
+    font-family: "Cormorant Garamond", serif;
+    position: relative; }
+  .overlaypage p {
+    color: white;
+    width: 100%;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 19px; }
+  .overlaypage a {
+    color: #b99470;
+    padding: 17px 22px;
+    border-radius: 2px;
+    border: 1px solid white;
+    background-color: #b99470;
+    transition: 0.3s; }
+    .overlaypage a:hover {
+      text-decoration: none;
+      background-color: transparent;
+      color: white;
+      border: 1px solid white; }
+
+#InfoHotel .info {
+  text-align: center; }
+  #InfoHotel .info h1 {
+    font-size: 44px;
+    color: #424242;
+    position: relative; }
+    #InfoHotel .info h1::after {
+      content: "";
+      background-color: #b99470;
+      width: 100px;
+      border-radius: 12px;
+      height: 4px;
+      position: absolute;
+      bottom: -12px;
+      left: 39%; }
+  #InfoHotel .info h3 {
+    margin-top: 30px;
+    font-size: 24px;
+    color: #424242; }
+
+#CardRooms {
+  background-color: #1c1c1c; }
+  #CardRooms .owl-next:focus, #CardRooms .owl-prev:focus {
+    outline: 0; }
+  #CardRooms .owl-next:hover, #CardRooms .owl-prev:hover {
+    background-color: #1c1c1c; }
+  #CardRooms .owl-next span, #CardRooms .owl-prev span {
+    font-size: 32px;
+    color: white; }
+  #CardRooms .item {
+    display: inline-block; }
+    #CardRooms .item .card {
+      width: 90%; }
+      @media screen and (max-width: 600px) {
+        #CardRooms .item .card {
+          margin-left: 19%; } }
+      #CardRooms .item .card .card-body h6 {
+        position: relative;
+        color: #757575; }
+        #CardRooms .item .card .card-body h6::before {
+          content: "›";
+          font-size: 24px;
+          color: #b99470;
+          position: absolute;
+          font-weight: 600;
+          left: -10px;
+          bottom: -2px; }
+        #CardRooms .item .card .card-body h6 span {
+          color: #424242; }
+      #CardRooms .item .card .card-body .btns {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+        #CardRooms .item .card .card-body .btns .viewmore {
+          color: #424242;
+          text-decoration: none;
+          margin-left: 2%; }
+      @media screen and (max-width: 600px) {
+        #CardRooms .item .card {
+          width: 65%; } }
+
+#Testimonials .Title {
+  margin-bottom: 50px; }
+  #Testimonials .Title h1 {
+    font-size: 44px;
+    position: relative; }
+    #Testimonials .Title h1::after {
+      content: "";
+      width: 20%;
+      width: 15%;
+      height: 3px;
+      position: absolute;
+      bottom: -10px;
+      left: 43%;
+      background-color: #b99470; }
+#Testimonials .carousel .owl-carousel .item .square {
+  border: 1px solid #e8e8e8; }
+  #Testimonials .carousel .owl-carousel .item .square p {
+    font-size: 16px; }
+  #Testimonials .carousel .owl-carousel .item .square .img {
+    display: inline-block;
+    width: 22%; }
+    #Testimonials .carousel .owl-carousel .item .square .img img {
+      max-width: 100%;
+      border-radius: 50%;
+      text-align: center; }
+#Testimonials .Information li {
+  font-size: 16px;
+  color: #424242;
+  cursor: pointer;
+  padding-top: 50px;
+  margin-left: 13%;
+  position: relative;
+  transition: all 1s; }
+  #Testimonials .Information li::before {
+    content: "\f067";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    bottom: 7px;
+    left: -16px;
+    background-color: #b99470;
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 6px 8px; }
+
+#contact {
+  background-image: url("../img/contact_background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; }
+
+footer {
+  background-color: #b99470; }
+  footer .left h4 {
+    color: white;
+    font-size: 24px;
+    text-shadow: 2px 3px 5px #1c1c1c; }
+  footer .left p {
+    font-size: 16px;
+    color: white;
+    text-shadow: 2px 0px 5px #1c1c1c; }
+  footer .left .sosial {
+    display: flex;
+    justify-content: space-around; }
+    footer .left .sosial li a {
+      text-decoration: none; }
+  footer .middle h4 {
+    color: white;
+    font-size: 24px;
+    text-shadow: 2px 3px 5px #1c1c1c;
+    margin-bottom: 20px; }
+  footer .middle li {
+    background-color: transparent;
+    font-size: 16px;
+    color: white;
+    text-shadow: 2px 0px 3px #1c1c1c;
+    border-color: white; }
+    footer .middle li i {
+      font-size: 22.4px;
+      margin-right: 20px; }
+  footer .right form button {
+    display: block; }
+  footer .right h4 {
+    color: white;
+    font-size: 24px;
+    text-shadow: 2px 3px 5px #1c1c1c; }
+  footer .right p {
+    font-size: 16px;
+    color: white;
+    text-shadow: 2px 0px 5px #1c1c1c; }
+  footer .end {
+    color: white;
+    border-top: 1px solid white;
+    padding: 20px; }
+
+#shopping {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/Towel-in-Hotel-Room-welcome-guests-room-service-845x321-1.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 500px; }
+  #shopping h2 {
+    color: white;
+    text-align: center;
+    background-color: transparent; }
+  #shopping ul {
+    margin-top: 152px;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around; }
+    #shopping ul li {
+      position: relative; }
+      #shopping ul li a {
+        color: white;
+        font-size: 29.3333333333px;
+        background-color: #424242; }
+        #shopping ul li a:hover {
+          background-color: #b99470; }
+
+.mycart {
+  background-image: linear-gradient(rgba(248, 8, 8, 0.993), #e8f80a);
+  height: 400px;
+  background-color: white;
+  margin-top: 90px; }
+  .mycart ol {
+    margin-top: 20px; }
+    .mycart ol li {
+      color: white;
+      font-size: 16px; }
+
+.Login a {
+  text-decoration: none;
+  position: relative; }
+  .Login a i {
+    max-width: 100%;
+    height: 11px;
+    font-size: 25px;
+    margin-right: 14px;
+    color: #f76904; }
+  .Login a span {
+    position: absolute;
+    top: -20px;
+    right: 7px;
+    font-weight: bold;
+    color: #f76904 !important; }
+
+.FreeShops {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.993), #16106e);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+  .FreeShops .img {
+    width: 90%;
+    height: 296px; }
+    .FreeShops .img img {
+      width: 100%;
+      height: 296px;
+      position: relative;
+      border-radius: 32px 0 0 0; }
+    .FreeShops .img h6 {
+      position: absolute;
+      top: 50%;
+      left: 44%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      text-align: center;
+      display: inline-block;
+      background: #0000045e;
+      color: white;
+      padding: 5px 17px;
+      border-radius: 5px;
+      font-size: 29.3333333333px; }
+      @media screen and (max-width: 600px) {
+        .FreeShops .img h6 {
+          font-size: 32px; } }
+    .FreeShops .img .detail {
+      bottom: 0px;
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      width: 85.5%;
+      left: 14px;
+      background-color: #0000007a; }
+      .FreeShops .img .detail input {
+        width: 20px;
+        height: 20px;
+        margin-left: 8px;
+        margin-top: 6px; }
+      .FreeShops .img .detail span {
+        margin-right: 5px;
+        font-size: 20.8px;
+        color: white;
+        margin-left: 16px; }
+
+#Paid {
+  background-image: linear-gradient(rgba(179, 19, 19, 0.993), #d6f353);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+  #Paid .img {
+    width: 100%;
+    position: relative;
+    height: 170px; }
+    #Paid .img img {
+      width: 100%;
+      height: 170px;
+      border-radius: 32px 0 0 0; }
+    #Paid .img h6 {
+      position: absolute;
+      top: 50%;
+      left: 47%;
+      padding: 5px 11px;
+      border-radius: 5px;
+      font-size: 20px; }
+    #Paid .img .detail {
+      bottom: 0px;
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      width: 100%;
+      background-color: #0000007a;
+      left: 0; }
+      #Paid .img .detail input {
+        width: 20px;
+        height: 20px;
+        margin-left: 8px;
+        margin-top: 6px; }
+      #Paid .img .detail span {
+        margin-right: 5px;
+        font-size: 20.8px;
+        color: white;
+        margin-left: 16px; }
+
+/*# sourceMappingURL=style.css.map */

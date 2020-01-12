@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+    <main>
+        <section id="shopping">
+            <div class="container">
+                <div class="row">
+                    <div class="margin col-lg-12 col-sm-12">
+                        <h2 class="animated fadeInLeft">Sifariş vermək istədiyiniz əşyaları seçin</h2>
+
+
+                        <ul>
+                            <li>
+                                <a class="btnLogin" href=@Url.Action("Index","FreeShops")>
+                                    Otel tərəfindən pulsuz
+                                </a>
+                            </li>
+                            <li>
+                                <a class="btnLogin" href=@Url.Action("Index","Paid")>
+                                    Ödənişli
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+

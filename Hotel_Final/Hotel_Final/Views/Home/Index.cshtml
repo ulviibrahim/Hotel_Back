@@ -1,0 +1,316 @@
+﻿@model List<Hotel_Final.Models.Slider>
+
+
+
+
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<!-- Start Main -->
+<main>
+
+
+    <!-- Start Home Slider Section -->
+    <section id="homeslide">
+        <div class="owl-carousel ">
+            @foreach (var Slider in Model)
+            {
+                <div class=@Slider.ClassName>
+                    <div class="container">
+
+
+                        <div class="row">
+                            <div class="col-lg-12 margin">
+                                
+                                <div class="overlaypage"> 
+                                
+                                    <h3 class="text-white">
+                                        @Slider.Title
+                                    </h3>
+                                    <p class="margin animated  fadeIn delay-1s">
+                                        @Slider.Desc
+                                    </p>
+                                    <a href=@Url.Action("Index","Home") id="btn-rooms" class="text-white animated  fadeIn delay-2s">
+                                        @Slider.LinkText <i class="fas fa-bed"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+
+    </section>
+    <!-- Start Home Slider Section -->
+    <!-- InfoHotel start -->
+    <section id="InfoHotel">
+        <div class="container">
+            <div class="row margin">
+                <div class="mb-5 col-lg-6 col-md-12 col-sm-12">
+                    <div class="info">
+                        <h1>Welcome To Soho Hotel</h1>
+                        <h3>Luxury Resort & Rooms</h3>
+                        <p>
+                            Duis vel nisl lacinia, facilisis in, consectetur leon vestibulum et ullamcorper tortor leon placerat
+                            mauris tincidunt ut non velit faucibus nam a pretium in sapien nunc quis congue purus nunc feugiat purus
+                            a ultricies suspendisse fringilla est sodales dui, non mattis tortor
+                        </p>
+
+                        <a href="#" class="btnLogin margin">Daha çox</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-12 col-sm-12">
+
+                    <video class="ml-5" width="400" height="230" controls
+                           src="~/Public/video/The Ritz-Carlton, Hong Kong - 5-Star Hotel Near Tsim Sha Tsui.mp4"></video>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- InfoHotel end -->
+    <!-- CardRooms start -->
+
+    <section id="CardRooms">
+        <div class="container">
+            <div class="row">
+                <div class="owl-carousel owl-theme margin">
+                    <div class="item">
+                        <div class="card">
+                            <img class="card-img-top" src="~/Public/img/card1.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title">Deluxe King Room</h4>
+                                <h6> Max Ocuppancy: <span>2 Person(s)</span> </h6>
+                                <h6> Size: <span>35-40sqm</span> </h6>
+                                <h6> View: <span>City</span> </h6>
+
+
+                                <div class="btns">
+                                    <a href="#" class="btnLogin">From 480.00 per night</a>
+                                    <a href="#" class="viewmore">Details ›</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card">
+                            <img class="card-img-top" src="~/Public/img/card2.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title">Deluxe King Room</h4>
+                                <h6> Max Ocuppancy: <span>2 Person(s)</span> </h6>
+                                <h6> Size: <span>35-40sqm</span> </h6>
+                                <h6> View: <span>City</span> </h6>
+
+
+                                <div class="btns">
+                                    <a href="#" class="btnLogin">From 480.00 per night</a>
+                                    <a href="#" class="viewmore">Details ›</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card">
+                            <img class="card-img-top" src="~/Public/img/card3.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title">Deluxe King Room</h4>
+                                <h6> Max Ocuppancy: <span>2 Person(s)</span> </h6>
+                                <h6> Size: <span>35-40sqm</span> </h6>
+                                <h6> View: <span>City</span> </h6>
+
+
+                                <div class="btns">
+                                    <a href="#" class="btnLogin">From 480.00 per night</a>
+                                    <a href="#" class="viewmore">Details ›</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card">
+                            <img class="card-img-top" src="~/Public/img/card2.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title">Deluxe King Room</h4>
+                                <h6> Max Ocuppancy: <span>2 Person(s)</span> </h6>
+                                <h6> Size: <span>35-40sqm</span> </h6>
+                                <h6> View: <span>City</span> </h6>
+
+
+                                <div class="btns">
+                                    <a href="#" class="btnLogin">From 480.00 per night</a>
+                                    <a href="#" class="viewmore">Details ›</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card">
+                            <img class="card-img-top" src="~/Public/img/card3.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title">Deluxe King Room</h4>
+                                <h6> Max Ocuppancy: <span>2 Person(s)</span> </h6>
+                                <h6> Size: <span>35-40sqm</span> </h6>
+                                <h6> View: <span>City</span> </h6>
+
+
+                                <div class="btns">
+                                    <a href="#" class="btnLogin">From 480.00 per night</a>
+                                    <a href="#" class="viewmore">Details ›</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- CardRooms end -->
+    <!-- section Testimonials start -->
+    <section id="Testimonials">
+        <div class="container">
+            <div class="row margin">
+                <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+
+                    <div class="text-center Title">
+                        <h1>Testimonials</h1>
+                    </div>
+                    <div class="carousel">
+                        <div class="owl-carousel owl-theme">
+
+                            <div class="item">
+                                <div class="square ">
+                                    <div class="container">
+                                        <p class="mt-4">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ibitis alias voluptatum
+                                            reiciendis. Ad odit tempora similique quibusdam veritatis minus voluptatem voluptatum?
+                                        </p>
+                                        <div class=" margin img"><img src="~/Public/img/card.min.jpg" alt=""></div>
+                                        <h6 class="mb-5">Ulvi Ibrahimov-Deluxe King Suite</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="item">
+                                <div class="square ">
+                                    <div class="container">
+                                        <p class="mt-4">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ibitis alias voluptatum
+                                            reiciendis. Ad odit tempora similique quibusdam veritatis minus voluptatem voluptatum?
+                                        </p>
+                                        <div class=" margin img"><img src="~/Public/img/testimonial-02.jpg" alt=""></div>
+                                        <h6 class="mb-5">Ulvi Ibrahimov-Deluxe King Suite</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="square ">
+                                    <div class="container">
+                                        <p class="mt-4">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ibitis alias voluptatum
+                                            reiciendis. Ad odit tempora similique quibusdam veritatis minus voluptatem voluptatum?
+                                        </p>
+                                        <div class=" margin img"><img src="~/Public/img/testimonial-05.jpg" alt=""></div>
+                                        <h6 class="mb-5">Ulvi Ibrahimov-Deluxe King Suite</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12">
+
+                    <div class="text-center Title">
+                        <h1> Hotel Information</h1>
+                    </div>
+
+                    <ul class="list-group Information list-group-flush changed">
+
+                        <li class="list-group-item" data-toggle="collapse" href="#collapseExample">
+                            My flight arrives early in the
+                            morning, what time can I check in?
+                        </li>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card border-0 ml-5 card-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil
+                                anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                            </div>
+                        </div>
+                        <li class="list-group-item" data-toggle="collapse" href="#second">
+                            My flight arrives early in the morning,
+                            what time can I check in?
+                        </li>
+                        <div class="collapse" id="second">
+                            <div class="card border-0 ml-5  card-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil
+                                anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                            </div>
+                        </div>
+                        <li class="list-group-item" data-toggle="collapse" href="#third">
+                            My flight arrives early in the morning,
+                            what time can I check in?
+                        </li>
+                        <div class="collapse" id="third">
+                            <div class="card border-0 ml-5  card-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil
+                                anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                            </div>
+                        </div>
+                        <li class="list-group-item" data-toggle="collapse" href="#fourth">
+                            My flight arrives early in the morning,
+                            what time can I check in?
+                        </li>
+                        <div class="collapse" id="fourth">
+                            <div class="card border-0 ml-5 card-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil
+                                anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                            </div>
+                        </div>
+
+                        <!-- <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Morbi leo risus</li>
+                        <li class="list-group-item">Porta ac consectetur ac</li>
+                        <li class="list-group-item">Vestibulum at eros</li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section Testimonials end -->
+    <!-- section contact start -->
+    <section id="contact">
+        <div class="overlaycontact text-center text-white pb-5">
+            <div class="container">
+                <div class="row ">
+                    <div class="offset-lg-2 col-lg-8 col-md-12 col-sm-12 ">
+                        <h1 class="margin ">Book online today and look forward to a relaxing stay with us</h1>
+                        <p class="mb-5">Call Us On 1800-1111-2222 or Email booking@website.com</p>
+                        <a href="#" class="btnLogin">Online Booking</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- section contact end -->
+
+</main>
+
+<!-- Main end -->
+@section Scripts{
+
+    @*@Scripts.Render("~/Public/owlcarousel/owl.carousel.min.js")*@
+
+}

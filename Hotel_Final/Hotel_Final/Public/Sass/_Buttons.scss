@@ -1,0 +1,86 @@
+%btn {
+    padding: 8px 25px;
+    border-radius: 2px;
+   
+    background-color: $helper-color;
+    transition: all 0.5s;
+    &:hover{
+        text-decoration: none;
+        color: $helper-color;
+        font-size: $text-size;
+        border: 1px solid $helper-color;
+        background-color: $primary-color;
+    }
+}
+
+%sosial_buttons{
+    font-size: $text-size;
+    padding: 12px 16px;
+    border-radius: 50%;
+    color: $helper-color;
+    background-color:$secondary-color;
+    transition: all .5s;
+    
+}
+.fa-facebook-f{
+    @extend %sosial_buttons;
+    padding: 13px 16px;
+
+    &:hover{
+        background-color: #3b5998;
+    }
+    
+}
+.fa-twitter{
+    @extend %sosial_buttons;
+    
+    padding: 13px 14px;
+    &:hover{
+        background-color: #00acee;
+
+    }
+    
+}.fa-instagram{
+    @extend %sosial_buttons;
+    padding: 14px 16px;
+
+    &:hover{
+        background-color: #3f729b;
+    }
+    
+}.fa-youtube{
+    @extend %sosial_buttons;
+    padding: 14px 14px;
+
+    &:hover{
+        background-color: #b2071d;
+
+    }
+    
+}.fa-google-plus-g{
+    @extend %sosial_buttons;
+    padding: 13px 13px;
+
+    &:hover{
+        background-color: #db4a39;
+    }
+    
+}
+
+.btnLogin {
+    @extend %btn;
+    color: $primary-color;
+    border: 1px solid $primary-color;
+    cursor: pointer;
+}
+.sub{
+    @extend %btn;
+    background-color: $secondary-color;
+    
+    &:hover{
+        background-color: darken(#b2071d,10);
+        color: $helper-color;
+        border-color: $helper-color;
+        cursor: pointer;
+    }
+}
