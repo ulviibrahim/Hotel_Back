@@ -11,15 +11,16 @@ namespace Hotel_Final.Controllers
     {
 
 
-        public ActionResult Index(int id)
+        public JsonResult Index(int id)
         {
+           
 
 
             var ProductsList = db.Products.FirstOrDefault(product => product.Id == id);
+
               //var ProductsList = db.Products.Where(p => products.Contains(p.Name)).ToList();
 
-            return View(ProductsList
-                );
+            return Json(ProductsList,JsonRequestBehavior.AllowGet);
         }
 
     }

@@ -1,4 +1,4 @@
-$(document).ready(function () {
+﻿$(document).ready(function () {
 
  var cart=[];
     $("#homeslide .owl-carousel").owlCarousel({
@@ -61,125 +61,114 @@ $(document).ready(function () {
 
     })
 
-   var istrue=false;
     var count = 0;
     let check = [];
  
-    $(".FreeShops .img img,h6,.detail").click(function (e) {
-        let checktext = $(this).parents(".img").find("h6").text()
+    //$(".FreeShops .img img,h6,.detail").click(function (e) {
+    //    let checktext = $(this).parents(".img").find("h6").text()
 
- $(this).parents(".img").find(".detail input").toggleClass("d-none")
-//  if(istrue=true){
-//   count++
+    //    $(this).parents(".img").find(".detail input").toggleClass("d-none")
+    //    //  if(istrue=true){
+    //    //   count++
 
- if($(this).parents(".img").find("input").hasClass("d-none")){
-     $(this).parents(".img").find("input").prop("checked",false)
+    //    if ($(this).parents(".img").find("input").hasClass("d-none")) {
+    //        $(this).parents(".img").find("input").prop("checked", false)
 
-     istrue = false
-   
-  count--
-  var removeItem=$(this).parents(".img").find("h6").text()+" "+$(this).parents(".img").find("span").text()
-  
-  cart = jQuery.grep(cart, function(value) {
-  
+    //        istrue = false
 
-      return value != removeItem;
+    //        count--
+    //        var removeItem = $(this).parents(".img").find("h6").text() + " " + $(this).parents(".img").find("span").text()
+
+    //        cart = jQuery.grep(cart, function (value) {
 
 
-  });
-       
-         check = jQuery.grep(check, function (value) {
+    //            return value != removeItem;
 
 
-             return value != checktext;
-         });
-   
+    //        });
 
-  $(".Login a span").html(count)
-  if(count==0){
-  $(".Login a span").html("")
-    
-  }
+    //        check = jQuery.grep(check, function (value) {
 
 
- }
- else {
-     $(this).parents(".img").find("input").prop("checked", true)
-
-  istrue=true
-     count++
-     check.push(checktext)
-     
-
-     
-  cart.push($(this).parents(".img").find("h6").text()+" "+$(this).parents(".img").find("span").text())
-  $(".Login a span").html(count)
-
-        }
-       
- 
-     
-        console.log(check)
-        console.log($(".img").find("input").prop("checked"))
-      
-  })
-
- $(".basket").click(function(e){
-     e.preventDefault()
-     console.log(check)
-     localStorage["check"] = JSON.stringify(check)
-
-     $(".mycart").find(".apply").addClass("d-none")
-    
-  $(".mycart").toggleClass("d-none")
-     $(".mycart #myform").html("")
-  for(var i=0;i<check.length;i++){
-    
-      $(".mycart #myform").append("<input name=products  class='childol form-control' value= " + check[i] +"/>")
-  }
-     if ($(".mycart #myform input").hasClass("childol")) {
-                            
-         $(".mycart").append("<button type='Submit' class='apply  btn btn-primary'>Apply</button>")
-      console.log("testttt")
-
-  }
-  else{
-    $(".mycart").find(".apply").addClass("d-none")
-
-  }
-  
- })
- 
-    $(document).on("click", ".mycart .apply", function (e) {
-        $("#myform").submit()
-        //var t = $(".mycart ").html();
-        
-    //    var stored_product = JSON.parse(localStorage["check"]);
-    //    console.log(stored_product)
-    //    $.ajax({
-    //        type: "Post",
-    //        url: "/Cash/index",
-    //        data: { "products": stored_product},
-    //        success: function (res) {
-    //            $.each(res, function (index, item) {
-
-    //                console.log(item)
-
-                 
-    //            })
+    //            return value != checktext;
+    //        });
 
 
-    //            },
-    //            error: function (er) {
-    //                console.log(er.statusText)
-    //            }
+    //        $(".Login a span").html(count)
+    //        if (count == 0) {
+    //            $(".Login a span").html("")
 
-       
+    //        }
+
+
+    //    }
+    //    else {
+    //        $(this).parents(".img").find("input").prop("checked", true)
+
+
+    //    }
     //})
-    })
-    $(".meta").click(function () {
-        $("#myform").submit()
-    })
+    $(".cat").click(function (ev) {
+        ev.preventDefault();
        
+        $.ajax({
+            method: "get",
+            url: $(this).attr("href"),
+            dataType: "json",
+            success: function (response) {
+                $("#ProductTable").find("tbody").html("")
+                console.log(response)
+                $.each(response, function (index, item) {
+                        addToTable(item)
+                        console.log(item)
+                    })
+                
+                 },
+
+            })
+        })
+
+    function addToTable(product) {
+        var tr = `<tr>
+            <th scope="row">${product.OrderBy}</th>
+            <td>${product.Name}</td>
+            <td>${product.Price}$</td>
+            <td><input style="width:50px" min="1" type="number" name="Countorder" value="1" /></td>
+
+            <td>
+              <a id="OpenModal" href="/Paid/AddOrder" data-id="${product.Id}">Əlavə et <i class="fas fa-arrow-left"></i></a>
+            </td>
+        </tr>`;
+        $("#ProductTable").find("tbody").append(tr)
+    }
+    $("")
+ 
+    $(document).on("click", "#OpenModal", function (s) {
+        s.preventDefault();
+        console.log($(this).parents("tr").find("input").val())
+        $.ajax({
+            method: "get",
+            url: "/Paid/AddOrder",
+            data: create = create = {
+                id:$(this).data("id"),
+                count : $(this).parents("tr").find("input").val()
+            },
+            dataType: "json",
+            success: function (response) {
+                console.log(response)
+                if (response.status === 432) {
+                   location.href="/Account/Login"
+                }
+                toastr.success("Sifarisiniz qebul olundu")
+
+            },
+            error: function (e) {
+                console.log(e);
+                toastr.error("error")
+            }
+    })
+
+      
+});
 });
 

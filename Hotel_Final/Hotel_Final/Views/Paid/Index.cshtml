@@ -1,95 +1,56 @@
-﻿@model List<Hotel_Final.Models.Product>
+﻿@model Hotel_Final.Models.vwProdCat
 @{
     ViewBag.Title = "Index";
 }
     <main>
-        <section class="FreeShops" id="Paid">
+        <section class="FreeShops bg-light" id="Paid" >
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4">
-                <ul class="list-unstyled">
-                    @foreach (var prod in Model)
-                    {
-                        <li>
-                            <form #myform action="/Cash/Index" method="post">
-                                <input type="hidden" name="products" value=@prod.Id />
-                            </form>
-                            <div class="meta d-flex justify-content-between">
-                                <a href="#">@prod.Name</a>
-                                <span>@prod.Price</span>
-                            </div>
+                    <div class="col-lg-3 col-md-4 col-sm-12 margin">
+                        <h4>Kategoriyalar</h4>
+                        <ul class="list-unstyled">
+                            <li><a class="cat" href="/Paid/Products">Bütün Kateqoriyalar</a> </li>
 
-                        </li>
-                    }
+                            @foreach (var category in Model.Categories)
+                            {
+                                <li><a class="cat" href=@Url.Action("Products","Paid", new { category.Id })>@category.Name</a> <i class="fas fa-arrow-left"></i></li>
+                            }
 
-                </ul>
-            </div>
-            </div>
-            </div>
-            @*<div class="container">
-                <div class="row">
-                    @foreach (var product in Model)
-                    {
-                        <div class="col-lg-3 col-md-4 col-sm-6  margin">
-                            <div class="img sl">
-                                <form action="/Cash/Index"  method="post">
-                                    <input type="hidden" name="products" value="" />
-                                    <img src="~/Upload/@product.Photo" alt="">
-                                    <h6>@product.Name</h6>
-                                    <div class="detail">
-
-                                        <input class="d-none" type="checkbox">
-                                        <span>@product.Price$</span>
-                                    </div>
-                                </form>
-                            </div>
-
-
-                        </div>
-
-                    }*@
-
-                    @*<div class="col-lg-3 col-md-4 col-sm-6  margin">
-                        <div class="img sl">
-                            <img src="~/Public/img/freeShop/jw-404_xlrg.jpg" alt="">
-                            <h6>Hamam xalatı</h6>
-                            <div class="detail">
-
-                                <input class="d-none" type="checkbox">
-                                <span>20$</span>
-                            </div>
-                        </div>
-
-
+                        </ul>
                     </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6  margin">
-                        <div class="img sl">
-                            <img src="~/Public/img/freeShop/jw-404_xlrg.jpg" alt="">
-                            <h6>Dəsmal</h6>
-                            <div class="detail">
 
-                                <input class="d-none" type="checkbox">
-                                <span>20$</span>
-                            </div>
-                        </div>
+                    <div class="margin col-lg-8 offset-lg-1 col-md-7 offset-md-1">
+                        <table id="ProductTable" class="table table-bordered ">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Adı</th>
+                                    <th scope="col">Qiyməti</th>
+                                    <th scope="col">Miqdarı</th>
+                                    <th scope="col">Sifariş et</th>
 
-
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var product in Model.Products)
+                                {
+                                    <tr>
+                                        <th scope="row">@product.OrderBy</th>
+                                        <td>@product.Name</td>
+                                        <td>@product.Price$</td>
+                                        <td><input style="width:50px" min="1" type="number" id="ordercount" name="OrderCount" value="1" /></td>
+                                        <td>
+                                            <a id="OpenModal" href="/Paid/AddOrder" data-id="@product.Id">Əlavə et <i class="fas fa-arrow-left"></i></a>
+                                        </td>
+                                    </tr>
+                                }
+                               
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6  margin">
-                        <div class="img sl">
-                            <img src="~/Public/img/freeShop/jw-404_xlrg.jpg" alt="">
-                            <h6>Hamam xalatı</h6>
-                            <div class="detail">
-
-                                <input class="d-none" type="checkbox">
-                                <span>20$</span>
-                            </div>
-                        </div>
-
-
-                    </div>*@
-
                 </div>
+
+            </div>
             </div>
         </section>
     </main>
