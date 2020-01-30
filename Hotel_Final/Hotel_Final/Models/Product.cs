@@ -11,7 +11,7 @@ namespace Hotel_Final.Models
         public int OrderBy { get; set; }
         public string Name { get; set; }
         public string Photo { get; set; }
-        public int Price { get; set; }
+        public string Price { get; set; }
         public int ProductCount { get; set; }
         public int CategoryId { get; set; }
 

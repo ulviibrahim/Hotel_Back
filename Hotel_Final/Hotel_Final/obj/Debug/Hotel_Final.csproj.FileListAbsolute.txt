@@ -214,7 +214,6 @@ C:\Users\acer\Desktop\backend\Hotel_Final\Hotel_Final\bin\Microsoft.Owin.Securit
 C:\Users\acer\Desktop\backend\Hotel_Final\Hotel_Final\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\acer\Desktop\backend\Hotel_Final\Hotel_Final\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\acer\Desktop\backend\Hotel_Final\Hotel_Final\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\acer\Desktop\backend\Hotel_Final\Hotel_Final\obj\Debug\Hotel_Final.csprojAssemblyReference.cache
 C:\Users\acer\Desktop\backend\Hotel_Final\Hotel_Final\obj\Debug\Hotel_Final.Migrations.InitialCreate.resources
 C:\Users\acer\Desktop\backend\Hotel_Final\Hotel_Final\obj\Debug\Hotel_Final.Migrations.Setting_Table.resources
 C:\Users\acer\Desktop\backend\Hotel_Final\Hotel_Final\obj\Debug\Hotel_Final.Migrations.Logo.resources
@@ -228,3 +227,4 @@ C:\Users\acer\Desktop\backend\Hotel_Final\Hotel_Final\obj\Debug\Hotel_Final.Migr
 C:\Users\acer\Desktop\backend\Hotel_Final\Hotel_Final\obj\Debug\Hotel_Final.Migrations.change_User_text.resources
 C:\Users\acer\Desktop\backend\Hotel_Final\Hotel_Final\obj\Debug\Hotel_Final.Migrations.change_Usertext.resources
 C:\Users\acer\Desktop\backend\Hotel_Final\Hotel_Final\obj\Debug\Hotel_Final.Migrations.at_last.resources
+C:\Users\acer\Desktop\backend\Hotel_Final\Hotel_Final\obj\Debug\Hotel_Final.csprojAssemblyReference.cache

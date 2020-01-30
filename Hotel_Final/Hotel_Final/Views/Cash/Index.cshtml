@@ -1,17 +1,75 @@
-﻿@model List<Hotel_Final.Models.Product>
+﻿@model Hotel_Final.Models.ApplicationUser
+@using Hotel_Final.Models
 @{
     ViewBag.Title = "Index";
-}
+       Settings setting = ViewBag.Setting;
 
-@foreach (var item in Model)
-{
-    <h4>@item.Name</h4>
 }
+    <div id="particles-js" class="container-fluid"></div>
+    <div style="height:100vh" class="container mt-5">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="text-white  mb-5 h3">@setting.Logo hoteline movcud borcunuz: <span id="mustpay" class="text-warning font-weight-bold">@Model.PayBalance$</span>-dir.</div>
+                <ol class="text-white">
 
-    @*<form action="/cash/req" method="post">
-        <div class="form-group">
-            <input type="text" name="products" value="Hamam xalatı" />
-            <input type="text" name="products" value="Hamam xalatı" />
-            <button class="btnLogin" type="submit">Submit</button>
+                    @foreach (var order in Model.OrderHistories)
+                    {
+                        if (order.TotalPrice > 1 && order.isDeleted == false)
+                        {
+                            <li class="h5">
+                                <span>@order.Product.Name   </span>
+                                <span>    @order.TotalPrice$</span>
+
+                            </li>
+                        }
+                       
+                    }
+                </ol>
+                <button type="button" id="opencardform" class="mt-4  btn btn-success"> Odenise basla</button>
+
+            </div>
+            <div class="col-lg-5 offset-lg-1">
+                <div class="form-back d-none">
+                    <form id="payforcard" action="/Cash/CashOnline" method="post">
+                        <div class="form-group">
+                            <input type="hidden" id="TotalPrice" name="TotalPrice" value=@Model.PayBalance />
+                        </div>
+                        <div class="form-group">
+                            <label class="text-white h5" for="CardNumber">Card nomresi</label>
+                            <input autocomplete="off" type="number" style="width:70%" class="text-center form-control" name="CardNumber" maxlength="16" value="" />
+                        </div>
+                        <div style="width:70%" class="d-flex  form-group">
+                            <div>
+                                <label class="text-white h5" for="inputgroup">Tarix</label>
+                                <div id="inputgroup" style="width:50%" class="input-group">
+
+                                    <input type="number" maxlength="2" max="12" class="form-control ">
+                                    <input type="number" maxlength="2" min="20" class="form-control">
+                                </div>
+                            </div>
+                            <div style="width:30%">
+                                <label class="text-white h5" for="cvc">CVC</label>
+
+                                <input type="number" id="cvc" maxlength="2" max="12" class="form-control ">
+
+                            </div>
+                        </div>
+
+
+                        <button id="Pay" type="submit"class="btn btn-info">Ödə</button>
+                    </form>
+                </div>
+            </div>
         </div>
-    </form>*@
+    </div>
+
+
+@section css{
+    <link rel="stylesheet" href="~/Public/Sass/particlestyle.css">
+
+}
+@section scripts{
+
+    <script type="text/javascript" src="~/Scripts/particles.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/app.js"></script>
+}

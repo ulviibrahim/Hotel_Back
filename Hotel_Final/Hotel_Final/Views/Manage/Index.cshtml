@@ -1,89 +1,183 @@
 ﻿@model Hotel_Final.Models.IndexViewModel
 @{
-    ViewBag.Title = "Manage";
+    ViewBag.Title = "Hesabına düzəliş et";
 }
+<div id="particles-js" class="container-fluid" ></div>
 
-    <div class="container">
-        <h2>@ViewBag.Title.</h2>
+<div class="container partmain text-white">
+    <div class="row">
+        <div class="col-lg-6 col-md-12 col-sm-12">
 
-        <p class="text-success">@ViewBag.StatusMessage</p>
-        <div>
-            <h4>Change your account settings</h4>
-            <hr />
-            <dl class="dl-horizontal">
-                <dt>Password:</dt>
-                <dd>
-                    [
-                    @if (Model.HasPassword)
+
+            <h2>@ViewBag.Title.</h2>
+
+            <p class="text-info">@ViewBag.StatusMessage</p>
+            <div>
+                <dl>
+                    <dt>Ödəniləcək məbləğ:</dt>
+
+                    @if (@Model.Us.PayBalance != 0)
                     {
-                        @Html.ActionLink("Change your password", "ChangePassword")
+                        <dd> @Model.Us.PayBalance  $</dd>
+
                     }
                     else
                     {
-                        @Html.ActionLink("Create", "SetPassword")
-                    }
-                    ]
-                </dd>
-                <dt>External Logins:</dt>
-                <dd>
-                    @Model.Logins.Count [
-                    @Html.ActionLink("Manage", "ManageLogins") ]
-                </dd>
-                @*
-                Phone Numbers can used as a second factor of verification in a two-factor authentication system.
+                        <dd> 0 $</dd>
 
-                 See <a href="https://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
-                    for details on setting up this ASP.NET application to support two-factor authentication using SMS.
+                    }
+               
 
-                 Uncomment the following block after you have set up two-factor authentication
-                *@
-                @*
-                <dt>Phone Number:</dt>
-                <dd>
-                    @(Model.PhoneNumber ?? "None")
-                    @if (Model.PhoneNumber != null)
-                    {
-                        <br />
-                        <text>[&nbsp;&nbsp;@Html.ActionLink("Change", "AddPhoneNumber")&nbsp;&nbsp;]</text>
-                        using (Html.BeginForm("RemovePhoneNumber", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    <a href="/Cash/Index" class="btn btn-success">Odenisi online et</a>
+                
+
+                </dl>
+
+               
+                <dl class="dl-horizontal">
+                    <dd>
+
+                        @if (Model.HasPassword)
                         {
-                            @Html.AntiForgeryToken()
-                            <text>[<input type="submit" value="Remove" class="btn-link" />]</text>
+                            @Html.ActionLink("Şifrəni dəyiş", "ChangePassword", routeValues: null, htmlAttributes: new { @class = "btn btn-info pt-2 " })
                         }
-                    }
-                    else
-                    {
-                        <text>[&nbsp;&nbsp;@Html.ActionLink("Add", "AddPhoneNumber")
-                    }
-                </dd>
-                *@
-                <dt>Two-Factor Authentication:</dt>
-                <dd>
-                    <p>
-                        There are no two-factor authentication providers configured. See <a href="https://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
-                        for details on setting up this ASP.NET application to support two-factor authentication.
-                    </p>
-                    @*@if (Model.TwoFactor)
-                    {
-                        using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        else
                         {
-                            @Html.AntiForgeryToken()
-                            <text>Enabled
-                            <input type="submit" value="Disable" class="btn btn-link" />
-                            </text>
+                            @Html.ActionLink("Düzəlt", "SetPassword")
                         }
-                    }
-                    else
+
+                    </dd>
+
+
+                    @*
+            Phone Numbers can used as a second factor of verification in a two-factor authentication system.
+
+             See <a href="https://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
+                for details on setting up this ASP.NET application to support two-factor authentication using SMS.
+
+             Uncomment the following block after you have set up two-factor authentication
+                    *@
+
+                    <dt>Telefon nömrəsi:</dt>
+                    <dd>
+                        @(Model.PhoneNumber ?? "None")
+                        <div class="d-flex" mt-3>
+                            @if (Model.PhoneNumber != null)
+                            {
+                                <br />
+
+                                @Html.ActionLink("Change", "AddPhoneNumber", routeValues: null, htmlAttributes: new { @class = "btn btn-success pt-2 ", @style = "height=10px;" }) using (Html.BeginForm("RemovePhoneNumber", "Manage", FormMethod.Post, new { role = "form" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <text><input type="submit" value="Remove" class="btn btn-danger ml-2" /></text>
+                                }
+                            }
+                            else
+                            {
+                                <text>&nbsp;&nbsp;@Html.ActionLink("Add", "AddPhoneNumber", routeValues: null, htmlAttributes: new { @class = "btnLogin pt-2 " })</text>
+                            }
+                        </div>
+                    </dd>
+
+
+                    <dd>
+
+                        @*@if (Model.TwoFactor)
+                {
+                    using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                     {
-                        using (Html.BeginForm("EnableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        @Html.AntiForgeryToken()
+                        <text>Enabled
+                        <input type="submit" value="Disable" class="btn btn-link" />
+                        </text>
+                    }
+                }
+                else
+                {
+                    using (Html.BeginForm("EnableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <text>Disabled
+                        <input type="submit" value="Enable" class="btn btn-link" />
+                        </text>
+                    }
+                }*@
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12">
+         
+            
+            <h3 class="mt-3">Qiymətləndirmə</h3>
+            <div class="form-group mt-3">
+                @if (Model.Comment == null)
+                {
+
+                    <form id="Rateform" action="/Manage/Rate" method="post">
+                        <label style="font-size:20px" for="context">Rəyiniz</label>
+                        <textarea rows="6" required id="context" namae="Context" class="form-control mb-4 " name="context"></textarea>
+                        <ul class="rateUl">
+                            <li>
+                                <a class="ratedeg" href="#"><span class="d-none">1</span><i class="fas fa-star"></i></a>
+                            </li>
+                            <li>
+                                <a class="ratedeg" href="#"><span class="d-none">2</span><i class="fas fa-star"></i></a>
+                            </li>
+                            <li>
+                                <a class="ratedeg" href="#"><span class="d-none">3</span><i class="fas fa-star"></i></a>
+                            </li>
+                            <li>
+                                <a class="ratedeg" href="#"><span class="d-none">4</span><i class="fas fa-star"></i></a>
+                            </li>
+                            <li>
+                                <a class="ratedeg" href="#"><span class="d-none">5</span><i class="fas fa-star"></i></a>
+                            </li>
+
+                        </ul>
+                        <input type="hidden" name="Rate" value="" />
+                        <button class="btnLogin" type="submit">Əlavə et </button>
+                    </form>
+                }
+                else
+                {
+
+            <div class="alert alert-success" role="alert">
+                <h4 class="alert-heading">
+                    <ul class="mt-4 list-unstyled d-flex justify-content-center">
+                        @for (int i = 0; i < Model.Comment.Rate; i++)
                         {
-                            @Html.AntiForgeryToken()
-                            <text>Disabled
-                            <input type="submit" value="Enable" class="btn btn-link" />
-                            </text>
+                            <li class="ml-2">
+                                <i style="color:rgb(232, 101, 8)" class="fas fa-star"></i>
+                            </li>
                         }
-                    }*@
-                </dd>
-            </dl>
+
+
+                    </ul>
+                </h4>
+                <p class="mt-4">
+                    @Model.Comment.Context
+                </p>
+                <hr>
+                <p class="mb-0">@Model.Comment.Date.ToString("dd MM yyyy")</p>
+            </div>
+                   
+
+
+                   
+                }
+            </div>
+
         </div>
     </div>
+</div>
+    
+@section css{
+    <link rel="stylesheet" href="~/Public/Sass/particlestyle.css">
+
+}
+@section scripts{
+
+    <script type="text/javascript" src="~/Scripts/particles.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/app.js"></script>
+}

@@ -1,4 +1,6 @@
-﻿@model List<Hotel_Final.Models.Slider>
+﻿@using Hotel_Final.Models
+
+@model List<Hotel_Final.Models.Slider>
 
 
 
@@ -6,6 +8,7 @@
 
 @{
     ViewBag.Title = "Home Page";
+    List<Testimonial> test = ViewBag.Testimonial;
 }
 
 <!-- Start Main -->
@@ -23,9 +26,9 @@
 
                         <div class="row">
                             <div class="col-lg-12 margin">
-                                
-                                <div class="overlaypage"> 
-                                
+
+                                <div class="overlaypage">
+
                                     <h3 class="text-white">
                                         @Slider.Title
                                     </h3>
@@ -64,7 +67,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="col-lg-6 col-md-12 col-sm-9">
 
                     <video class="ml-5" width="400" height="230" controls
                            src="~/Public/video/The Ritz-Carlton, Hong Kong - 5-Star Hotel Near Tsim Sha Tsui.mp4"></video>
@@ -188,45 +191,38 @@
                     </div>
                     <div class="carousel">
                         <div class="owl-carousel owl-theme">
+                            @foreach (var rate in test)
+                            {
+                                <div class="item">
+                                    <div class="square ">
+                                        <div class="container">
+                                            <p class="mt-4">
+                                                @rate.Context
+                                            </p>
+                                            <div class=" margin img"><img src="~/Public/img/card.min.jpg" alt=""></div>
+                                            
+                                            <input type="hidden" id="ratestar" value=@rate.Rate />
 
-                            <div class="item">
-                                <div class="square ">
-                                    <div class="container">
-                                        <p class="mt-4">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ibitis alias voluptatum
-                                            reiciendis. Ad odit tempora similique quibusdam veritatis minus voluptatem voluptatum?
-                                        </p>
-                                        <div class=" margin img"><img src="~/Public/img/card.min.jpg" alt=""></div>
-                                        <h6 class="mb-5">Ulvi Ibrahimov-Deluxe King Suite</h6>
+                                            <ul class="rates list-unstyled d-flex justify-content-center">
+                                                @for (int i = 0; i < rate.Rate; i++)
+                                                {
+                                                    <li>
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                }
+
+
+                                            </ul>
+                                            <h6 class="mb-5">@rate.ApplicationUser.UserName</h6>
+                                            <p>@rate.Date.ToString("dd MM yyyy")</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            }
 
 
-                            <div class="item">
-                                <div class="square ">
-                                    <div class="container">
-                                        <p class="mt-4">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ibitis alias voluptatum
-                                            reiciendis. Ad odit tempora similique quibusdam veritatis minus voluptatem voluptatum?
-                                        </p>
-                                        <div class=" margin img"><img src="~/Public/img/testimonial-02.jpg" alt=""></div>
-                                        <h6 class="mb-5">Ulvi Ibrahimov-Deluxe King Suite</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="square ">
-                                    <div class="container">
-                                        <p class="mt-4">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ibitis alias voluptatum
-                                            reiciendis. Ad odit tempora similique quibusdam veritatis minus voluptatem voluptatum?
-                                        </p>
-                                        <div class=" margin img"><img src="~/Public/img/testimonial-05.jpg" alt=""></div>
-                                        <h6 class="mb-5">Ulvi Ibrahimov-Deluxe King Suite</h6>
-                                    </div>
-                                </div>
-                            </div>
+
+                          
                         </div>
                     </div>
                 </div>
@@ -238,6 +234,7 @@
 
                     <ul class="list-group Information list-group-flush changed">
 
+                        
                         <li class="list-group-item" data-toggle="collapse" href="#collapseExample">
                             My flight arrives early in the
                             morning, what time can I check in?

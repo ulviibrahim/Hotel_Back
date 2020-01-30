@@ -50,7 +50,8 @@
   cursor: pointer; }
 
 .sub {
-  background-color: #424242; }
+  background-color: #424242;
+  padding: 7px 14px; }
   .sub:hover {
     background-color: #810515;
     color: white;
@@ -58,7 +59,7 @@
     cursor: pointer; }
 
 body {
-  font-family: "Cormorant Garamond", serif; }
+  font-family: "Roboto", sans-serif; }
 
 header {
   box-shadow: 0px 10px 11px -2px rgba(0, 0, 0, 0.6);
@@ -77,27 +78,42 @@ header {
     margin-left: 15%; }
     header #navbarSupportedContent .navbar-nav li .nav-link {
       color: #424242;
-      transition: 0.3s;
       font-size: 18px;
-      font-weight: 500;
-      position: relative; }
-      header #navbarSupportedContent .navbar-nav li .nav-link::after {
+      font-weight: 500; }
+    header #navbarSupportedContent .navbar-nav li .active {
+      transition: 0.3s;
+      position: relative;
+      color: #424242;
+      font-size: 18px;
+      font-weight: 500; }
+      header #navbarSupportedContent .navbar-nav li .active::after {
         content: "";
         background-color: #b99470;
-        width: 0%;
         border-radius: 3px;
         height: 2px;
         position: absolute;
         bottom: 0;
-        left: 0; }
-      header #navbarSupportedContent .navbar-nav li .nav-link:hover {
+        width: 100%;
+        left: 0;
+        animation: example 1s linear; }
+        @media screen and (max-width: 600px) {
+          header #navbarSupportedContent .navbar-nav li .active::after {
+            width: 25%; } }
+      header #navbarSupportedContent .navbar-nav li .active:hover {
         color: #61482f; }
-        header #navbarSupportedContent .navbar-nav li .nav-link:hover::after {
+        header #navbarSupportedContent .navbar-nav li .active:hover::after {
           width: 100%;
           transition: all 1s; }
           @media screen and (max-width: 600px) {
-            header #navbarSupportedContent .navbar-nav li .nav-link:hover::after {
+            header #navbarSupportedContent .navbar-nav li .active:hover::after {
               width: 25%; } }
+@keyframes example {
+  from {
+    width: 0; }
+  to {
+    @media screen and (max-width: 600px) {
+      width: 25%; }
+    width: 100%; } }
   header #navbarSupportedContent .Login span {
     color: #424242; }
 
@@ -118,12 +134,12 @@ header {
   text-align: center; }
   .overlaypage h1 {
     color: white;
-    font-family: "Cormorant Garamond", serif;
+    font-family: "Roboto", sans-serif;
     position: relative; }
   .overlaypage p {
     color: white;
     width: 100%;
-    font-family: "Cormorant Garamond", serif;
+    font-family: "Roboto", sans-serif;
     font-size: 19px; }
   .overlaypage a {
     color: #b99470;
@@ -224,6 +240,10 @@ header {
       max-width: 100%;
       border-radius: 50%;
       text-align: center; }
+  #Testimonials .carousel .owl-carousel .item .square .rates li {
+    margin-left: 10px; }
+    #Testimonials .carousel .owl-carousel .item .square .rates li .fas {
+      color: #e86508; }
 #Testimonials .Information li {
   font-size: 16px;
   color: #424242;
@@ -338,7 +358,8 @@ footer {
     height: 11px;
     font-size: 25px;
     margin-right: 14px;
-    color: #f76904; }
+    color: #f76904;
+    margin-top: 10px; }
   .Login a span {
     position: absolute;
     top: -20px;
@@ -449,6 +470,9 @@ footer {
         margin-right: 50px;
         transition: all .7s;
         opacity: 0; }
+      #Paid ul li .fs {
+        opacity: 1;
+        margin-right: 3px; }
       #Paid ul li:hover i {
         margin-right: 3px;
         opacity: 1; }
@@ -471,5 +495,24 @@ footer {
       #Paid table tr td a:hover i {
         transform: rotate(180deg);
         opacity: 1; }
+
+.form-back {
+  background-color: #6c757dc7;
+  border-radius: 15px;
+  padding: 6%; }
+  .form-back form {
+    margin-right: -25%; }
+
+.paid {
+  position: absolute;
+  font-size: 14px;
+  padding: 3px 10px;
+  font-weight: 700;
+  top: 17px;
+  left: -5px;
+  transform: rotate(316deg);
+  color: white !important;
+  background-color: #025602;
+  border-radius: 8px 8px; }
 
 /*# sourceMappingURL=style.css.map */

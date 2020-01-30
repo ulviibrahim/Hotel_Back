@@ -37,7 +37,15 @@ namespace Hotel_Final.Controllers
                 _signInManager = value; 
             }
         }
-
+        public ActionResult Rate(Testimonial testimonial)
+        {
+            testimonial.ApplicationUserId = User.Identity.GetUserId();
+            testimonial.Date = DateTime.Now.Date;
+            db.Testimonials.Add(testimonial);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+         
         public ApplicationUserManager UserManager
         {
             get
@@ -71,7 +79,18 @@ namespace Hotel_Final.Controllers
                 TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
                 Logins = await UserManager.GetLoginsAsync(userId),
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
+                
             };
+            model.Comment = db.Testimonials.FirstOrDefault(f=>f.ApplicationUserId== userId);
+            model.Us = db.Users.Find(userId);
+            int total=0;
+            var realOrder = model.Us.OrderHistories.Where(w => w.isDeleted == false).ToList();
+            foreach (var price in realOrder)
+            {
+               total+= price.TotalPrice;
+            }
+            db.Users.Find(userId).PayBalance = total;
+            db.SaveChanges();
             return View(model);
         }
 
@@ -116,18 +135,22 @@ namespace Hotel_Final.Controllers
             {
                 return View(model);
             }
-            // Generate the token and send it
-            var code = await UserManager.GenerateChangePhoneNumberTokenAsync(User.Identity.GetUserId(), model.Number);
-            if (UserManager.SmsService != null)
-            {
-                var message = new IdentityMessage
-                {
-                    Destination = model.Number,
-                    Body = "Your security code is: " + code
-                };
-                await UserManager.SmsService.SendAsync(message);
-            }
-            return RedirectToAction("VerifyPhoneNumber", new { PhoneNumber = model.Number });
+
+            //// Generate the token and send it
+            //var code = await UserManager.GenerateChangePhoneNumberTokenAsync(User.Identity.GetUserId(), model.Number);
+            //if (UserManager.SmsService != null)
+            //{
+            //    var message = new IdentityMessage
+            //    {
+            //        Destination = model.Number,
+            //        Body = "Your security code is: " + code
+            //    };
+            //    await UserManager.SmsService.SendAsync(message);
+            //}
+            var userid = User.Identity.GetUserId();
+            db.Users.Find(userid).PhoneNumber = model.Number;
+            db.SaveChanges();
+            return RedirectToAction("Index", "Manage");
         }
 
         //
@@ -142,7 +165,7 @@ namespace Hotel_Final.Controllers
             {
                 await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
             }
-            return RedirectToAction("Index", "Manage");
+            return RedirectToAction("Index", "Home");
         }
 
         //
@@ -157,7 +180,7 @@ namespace Hotel_Final.Controllers
             {
                 await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
             }
-            return RedirectToAction("Index", "Manage");
+            return RedirectToAction("Index", "Home");
         }
 
         //

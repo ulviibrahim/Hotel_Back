@@ -1,4 +1,6 @@
 ﻿@model Hotel_Final.Models.vwProdCat
+@using Microsoft.AspNet.Identity;
+
 @{
     ViewBag.Title = "Index";
 }
@@ -13,13 +15,24 @@
 
                             @foreach (var category in Model.Categories)
                             {
-                                <li><a class="cat" href=@Url.Action("Products","Paid", new { category.Id })>@category.Name</a> <i class="fas fa-arrow-left"></i></li>
+                                <li class="catlist"><a class="cat" data-id="@category.Id">@category.Name</a> <i class="fas fa-arrow-left"></i></li>
                             }
 
                         </ul>
                     </div>
-
+                   
                     <div class="margin col-lg-8 offset-lg-1 col-md-7 offset-md-1">
+                        <h3 class="text-center font-weight-bold">Məhsullar</h3>
+                        <label class="mt-4" for="myInput">Axtar</label>
+                        <input id="myInput" autocomplete="off" type="text" class="mt-2 form-control" style="width:50%" placeholder="Search..">
+                      
+                        <form id="yoxla">
+
+                            <input type="hidden" name="Email" value='' />
+                            <input type="hidden" id="Subject" name="Subject" value="" />
+                        </form>
+
+
                         <table id="ProductTable" class="table table-bordered ">
                             <thead>
                                 <tr>
@@ -37,14 +50,14 @@
                                     <tr>
                                         <th scope="row">@product.OrderBy</th>
                                         <td>@product.Name</td>
-                                        <td>@product.Price$</td>
+                                        <td>@(@product.Price == null ? "Ödənişsizdir" : product.Price+"$")</td>
                                         <td><input style="width:50px" min="1" type="number" id="ordercount" name="OrderCount" value="1" /></td>
                                         <td>
                                             <a id="OpenModal" href="/Paid/AddOrder" data-id="@product.Id">Əlavə et <i class="fas fa-arrow-left"></i></a>
                                         </td>
                                     </tr>
                                 }
-                               
+
                             </tbody>
                         </table>
                     </div>

@@ -14,6 +14,7 @@ namespace Hotel_Final.Models
         public DateTime CreatedDate { get; set; } = DateTime.Now;
         public int OrderCount { get; set; } = 1;
         public bool isDeleted { get; set; } = false;
+        public int TotalPrice { get; set; }
         public virtual  Product Product { get; set; }
 
         [ForeignKey("ApplicationUserId")]

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Hotel_Final.Models.OrderHistory>
+@{
+    ViewBag.Title = "OrderHistory";
+}
+
+
+
+    <div class="container">
+        <h1 class="text-center mt-5">Sifarişləriniz</h1>
+        <div class="row">
+
+
+
+            @foreach (var order in Model)
+            {
+            <div class="col-lg-3 col-md-6 col-sm-12 text-center mt-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 style="color:red;font-weight:bold" class="card-title">@order.Product.Name</h4>
+                        <p>@order.ApplicationUser.Email</p>
+
+                        <p class="card-text">Sifariş sayı: @order.OrderCount</p>
+
+                        <p>Qiyməti: @(order.TotalPrice == 0 ? "Ödənişsizdir" : order.TotalPrice + "$")</p>
+                        <p style="color:darkgreen" href="#" class="card-link">@order.CreatedDate.ToString("dd MMMM yyyy")</p>
+                        <p>@order.CreatedDate.ToString("HH:mm")</p>
+                        @if (order.isDeleted == true ) {
+
+                    <span class="paid">Ödənilib</span>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            }
+
+        </div>
+    </div>

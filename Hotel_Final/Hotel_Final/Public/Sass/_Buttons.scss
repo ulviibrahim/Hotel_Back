@@ -73,11 +73,12 @@
     border: 1px solid $primary-color;
     cursor: pointer;
 }
-.sub{
+.sub {
     @extend %btn;
     background-color: $secondary-color;
-    
-    &:hover{
+    padding: 7px 14px;
+
+    &:hover {
         background-color: darken(#b2071d,10);
         color: $helper-color;
         border-color: $helper-color;

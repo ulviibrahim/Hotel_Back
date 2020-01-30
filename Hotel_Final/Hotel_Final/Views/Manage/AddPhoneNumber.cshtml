@@ -1,29 +1,43 @@
 ﻿@model Hotel_Final.Models.AddPhoneNumberViewModel
 @{
-    ViewBag.Title = "Phone Number";
+    ViewBag.Title = "Telefon ömrəsi";
 }
+    <div id="particles-js" class="container-fluid"></div>
     <div class="container">
-        <h2>@ViewBag.Title.</h2>
+        <h2 class="mt-5 text-white">@ViewBag.Title.</h2>
+        <div class="row">
+            <div class="col-lg-5 col-md-7 col-sm-12">
 
-        @using (Html.BeginForm("AddPhoneNumber", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-        {
-            @Html.AntiForgeryToken()
-            <h4>Add a phone number</h4>
-            <hr />
-            @Html.ValidationSummary("", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(m => m.Number, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.TextBoxFor(m => m.Number, new { @class = "form-control" })
-                </div>
+
+                @using (Html.BeginForm("AddPhoneNumber", "Manage", FormMethod.Post, new { @class = "form-horizontal text-white", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <h4 class="text-white">Nömrəni əlavə et</h4>
+                    <hr />
+                    @Html.ValidationSummary("", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Number, new { @class = "text-white col-lg-5 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Number, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" class="btn btn-success" value="Təsdiqlə" />
+                        </div>
+                    </div>
+                }
             </div>
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" class="btn btn-default" value="Submit" />
-                </div>
-            </div>
-        }
+        </div>
     </div>
-@section Scripts {
+
+@section css{
+    <link rel="stylesheet" href="~/Public/Sass/particlestyle.css">
+
+}
+@section scripts{
     @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript" src="~/Scripts/particles.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/app.js"></script>
 }

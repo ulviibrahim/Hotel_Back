@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <!-- v17430 -->
+
+  <title>Error Messages &ndash; MileIQ</title>
+
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="hc:meta:server:o5trzpSVVLsRGePG3pQjebYDlJ70t+0JBX6IaUpUgKfshT34QW4eaajhCaKlpru7FrdFCtO45vqDW+IMLN2Vuw==" />
+  <meta name="description" content="This article helps troubleshoot common error messages.  Connection error     Network Error Message  The Connection or Network Error..." /><meta property="og:image" content="https://theme.zdassets.com/theme_assets/627138/6b349e239ffcd4d022543cc3afab38a87ca807ce.png" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="MileIQ" />
+<meta property="og:title" content="Error Messages" />
+<meta property="og:description" content=" 
+This article helps troubleshoot common error messages.
+ Connection error
+   
+Network Error Message
+
+The Connection or Network Error messages indicates that MileIQ could not connect to a network t..." />
+<meta property="og:url" content="http://support.mileiq.com/hc/en-us/articles/115000270243-Error-Messages" />
+<link rel="canonical" href="https://support.mileiq.com/hc/en-us/articles/115000270243-Error-Messages" />
+<link rel="alternate" hreflang="en" href="https://support.mileiq.com/hc/en-us/articles/115000270243-Error-Messages" />
+
+  <link rel="stylesheet" media="all" href="//static.zdassets.com/hc/assets/application-ebe99bddbcda8cfa23b8459c9722c845.css" id="stylesheet" />
+    <!-- Entypo pictograms by Daniel Bruce — www.entypo.com -->
+    <link rel="stylesheet" media="all" href="//static.zdassets.com/hc/assets/theming_v1_support-630036b7a5c8f083a89c20154dae3ee6.css" />
+  <link rel="stylesheet" type="text/css" href="//p20.zdassets.com/hc/theming_assets/627138/259889/style.css?digest=360336313871" />
+
+  <link rel="shortcut icon" type="image/x-icon" href="//theme.zdassets.com/theme_assets/627138/e26c6acd3d95c050edc7cd85f08a5989ff83d76d.png" />
+
+  <script src="//static.zdassets.com/hc/assets/jquery-d5395f0b7ac5027403fc17855c46dbfc.js"></script>
+  
+  
+
+  <meta
+  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+  name="viewport"
+/>
+
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"
+/>
+
+<script
+  type="text/javascript"
+  src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"
+></script>
+
+<!-- Fonts -->
+<style>
+  /*@font-face {
+  	font-family: 'Circular-Book';
+  	url('//theme.zdassets.com/theme_assets/627138/c807a93f26df6ed8c5339f3df2a812c6d8c91594.woff') format('woff');
+  	font-weight: normal;
+  	font-style: normal;
+  }
+
+  @font-face {
+  	font-family: 'Circular-Medium';
+  	url('//theme.zdassets.com/theme_assets/627138/0764874fd145e446437f3c4a766d1b31de632ad5.woff') format('woff');
+  	font-weight: normal;
+  	font-style: normal;
+  }
+  
+  @font-face {
+  	font-family: 'RealTextOffc';
+  	url('//theme.zdassets.com/theme_assets/627138/d58494189d63db5de0179e45e1b42af6de1c2186.woff') format('woff');
+  	font-weight: normal;
+  	font-style: normal;
+  }
+  
+  @font-face {
+  	font-family: 'RealTextScOffc';
+  	url('') format('woff');
+  	font-weight: normal;
+  	font-style: normal;
+  }*/
+</style>
+
+<style>
+  .search-nav .icon-menu {
+    background-image: url(//theme.zdassets.com/theme_assets/627138/61baf2a2033ac6bd68063074387710d0fc43f61f.svg);
+  }
+
+  .hero {
+    background-image: url(//theme.zdassets.com/theme_assets/627138/44a14052f982ef450b4b9c940cefd62371f769bf.jpg);
+  }
+
+  /* Pathways homepage */
+  .section-logo[data-id="115001176383"] {
+    background-image: url(//theme.zdassets.com/theme_assets/627138/da81168cb8ce24b8672c8a1a0860cc36e7b83b7e.svg);
+  }
+  .section-logo[data-id="115001176403"] {
+    background-image: url(//theme.zdassets.com/theme_assets/627138/446979ec45b71203a905dbe1f1e32df2dcbb604c.svg);
+  }
+  .section-logo[data-id="115001176423"] {
+    background-image: url(//theme.zdassets.com/theme_assets/627138/04d3742dabd47c4657dfd7dff8f816b4bda38be4.svg);
+  }
+
+  a.view-all:after {
+    background-image: url(//theme.zdassets.com/theme_assets/627138/01c89db9c25a43402bcd3fd095258951ef2dcc30.svg);
+  }
+  .video-hover::after {
+    background-image: url(//theme.zdassets.com/theme_assets/627138/b8641162f377b6968b1bac22f1389a67bb80c2ca.svg);
+  }
+
+  /* Footer */
+  .footer-top a[data-type="contact"]::before {
+    background-image: url(//theme.zdassets.com/theme_assets/627138/8de385997c65b3cd2d67e0f289f6283ec0e1d7ae.svg);
+  }
+  .footer-top a[data-type="login"]::before {
+    background-image: url(//theme.zdassets.com/theme_assets/627138/318e59e6fe5f54564f969ca0fd4b84d6dc64002a.svg);
+  }
+  .footer-top a[data-type="blog"]::before {
+    background-image: url(//theme.zdassets.com/theme_assets/627138/dfdcc4e2ed64acf6a6ee177376e23866504faea2.svg);
+  }
+
+  /* Article page */
+  #article-page .article-vote-up {
+    background-image: url(//theme.zdassets.com/theme_assets/627138/d4b82ba4443b80c49dbead9542edc2b9c379e279.svg);
+  }
+
+  #article-page .article-vote-down {
+    background-image: url(//theme.zdassets.com/theme_assets/627138/a38193419d393af4e1a5b9fb939a358da688a357.svg);
+  }
+
+  /* Submit request */
+  #sbumit-page .nesty-input::after {
+    content: url(//theme.zdassets.com/theme_assets/627138/dbedf3f4d5158f70609ee9e82cb5709db62ce77d.svg);
+  }
+</style>
+
+<script type="text/javascript">
+  var icons = {
+    200896035: "//theme.zdassets.com/theme_assets/627138/4564b7b30559dda499973fc117cc0b73fd64ce71.svg",
+    200943115: "//theme.zdassets.com/theme_assets/627138/7565658c9b28688e4f0f000c1f3e52c378287b5e.svg",
+    200887849: "//theme.zdassets.com/theme_assets/627138/0374918fdc30b05184b36f71080d6c28c99295e2.svg",
+    200943195: "//theme.zdassets.com/theme_assets/627138/3b5c69eb5cf9bfc1eb60afd5bae12971658df44b.svg",
+    200836759: "//theme.zdassets.com/theme_assets/627138/5afcff94f19818edd8b3c729a42c64fd60d5f01f.svg",
+    201851246: "//theme.zdassets.com/theme_assets/627138/75ab4b8167de9f5321d06299628def6c90a07d25.svg",
+    200944535: "//theme.zdassets.com/theme_assets/627138/edad6020cd4deea2638c5569a1040d9c1a5c3627.svg",
+    115000229526: "//theme.zdassets.com/theme_assets/627138/bd406fc00e7773e4417e1f706e134140df1e6c3a.svg",
+    360004073991: "//theme.zdassets.com/theme_assets/627138/79dbc1fc3c5e4596cb01f190f18a717684a2a203.svg",
+    // Pathway
+    115001176383: "//theme.zdassets.com/theme_assets/627138/decc6f23bb38d18c3a5102ca34701965a5c573fa.svg",
+    115001176403: "//theme.zdassets.com/theme_assets/627138/363bfe607d442318a4298c03512ea33132e743b8.svg",
+    115001176423: "//theme.zdassets.com/theme_assets/627138/da9799badfff6213677d8fb0091f8ca01b74a057.svg"
+  };
+</script>
+
+<!-- Hello Bar -->
+<script
+  src="https://my.hellobar.com/4d497e0397ece50d97d91cd732d4d104070671a9.js"
+  type="text/javascript"
+  charset="utf-8"
+  async="async"
+></script>
+
+<!-- Support Options -->
+<script type="text/javascript">
+</script>
+
+<!-- Cookie stuff!! -->
+
+<script type="text/javascript" src="//theme.zdassets.com/theme_assets/627138/8035ce303e391be762f650269b1a722ac72ea578.js"></script>
+
+<script type="text/javascript">
+  var cookieBlockedScripts = new DeferredScripts();
+</script>
+<script type="text/javascript" src="//theme.zdassets.com/theme_assets/627138/b945e1ccbdf769b59b0296711b6f5b61c74a36dc.js"></script>
+
+  <script type="text/javascript" src="//p20.zdassets.com/hc/theming_assets/627138/259889/script.js?digest=360336313871"></script>
+</head>
+<body class="">
+  
+  
+
+
+  
+
+
+  <div id="msft-cc"></div>
+<header class="header">
+  <div class="inner">
+    
+    <a href="https://www.mileiq.com/" class="logo">
+      <img src="//theme.zdassets.com/theme_assets/627138/973ab72498daf6090d45d8ef4ee5ca2db1efea36.svg" alt="Logo">
+    </a>
+    
+    <!-- Search wrapper -->
+    <div class="nav-wrapper search-nav">
+    	<span class="icon-menu"></span>
+      
+      <nav class="user-nav">
+      	<form role="search" class="search" data-search="" action="/hc/en-us/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" /><input type="search" name="query" id="query" placeholder="How can we help?" aria-label="How can we help?" /></form>
+        <a href="#" class="search-cancel visible-xs">Cancel</a>
+      </nav>
+    </div>
+
+    <!-- Nav wrapper -->
+    <div class="nav-wrapper menu-wrapper">
+      <span class="icon-menu">
+      	<div></div>
+        <div></div>
+        <div></div>
+      </span>
+  
+      <nav class="user-nav" id="user-nav">
+        <a title="Home" href="/hc/en-us">Help Center Home</a>
+        <a class="submit-a-request" href="/hc/en-us/requests/new">Contact Us </a>  
+        <a href="https://dashboard.mileiq.com/login">Dashboard Login</a>  
+      </nav>
+      
+      <div style="display: none;">  <a class="login" data-auth-action="signin" role="button" rel="nofollow" title="Opens a dialog" href="/hc/en-us/signin?return_to=https%3A%2F%2Fsupport.mileiq.com%2Fhc%2Fen-us%2Farticles%2F115000270243-Error-Messages&amp;locale=en-us">Sign in</a>
+</div>
+    </div>
+
+    
+  </div>
+</header>
+
+<div id="modal-video-container">
+  <div class="modal-video">
+    <div class="responsive-16to9">
+    	<div class="modal-video-inner">
+      	<!-- Loaded from JS -->
+        <iframe src="" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    
+    <i class="material-icons">cancel</i>
+  </div>
+</div>
+
+  <main role="main">
+    <div class="article-page-nav page-nav container">
+  <nav class="sub-nav">
+    <ol class="breadcrumbs">
+  
+    <li title="MileIQ">
+      
+        <a href="/hc/en-us">MileIQ</a>
+      
+    </li>
+  
+    <li title="Help Center">
+      
+        <a href="/hc/en-us/categories/200315899-Help-Center">Help Center</a>
+      
+    </li>
+  
+    <li title="Troubleshooting">
+      
+        <a href="/hc/en-us/sections/200944535-Troubleshooting">Troubleshooting</a>
+      
+    </li>
+  
+</ol>
+
+  </nav>
+</div>
+
+<div id="article-page" class="container dual-container">
+  <div class="main-content">
+    
+    <!-- Article header -->
+  	<header class="article-header">
+      <h1 title="Error Messages" class="article-title">
+        Error Messages
+        
+      </h1>
+
+      <div class="article-author">
+        <div class="avatar article-avatar">
+          
+          <img src="https://secure.gravatar.com/avatar/a7657c9af9e5a4ee33f971eedda4bbe2?default=https%3A%2F%2Fassets.zendesk.com%2Fhc%2Fassets%2Fdefault_avatar.png&amp;r=g" alt="Avatar" class="user-avatar"/>
+        </div>
+        <div class="article-meta">
+          
+          katie
+          
+
+          <ul class="meta-group">
+            
+            <li class="meta-data"><time datetime="2019-10-17T11:45:02Z" title="2019-10-17T11:45:02Z" data-datetime="relative">October 17, 2019 11:45</time></li>
+            <li class="meta-data">Updated</li>
+            
+          </ul>
+        </div>
+      </div>
+      
+      <!--<a class="article-subscribe" title="Opens a sign-in dialog" rel="nofollow" role="button" data-auth-action="signin" aria-selected="false" href="/hc/en-us/articles/115000270243-Error-Messages/subscription.html">Follow</a>-->
+    </header>
+    
+    <!-- Article content -->
+    <div class="article-content">
+      <div class="article-body"><h4> </h4>
+<p>This article helps troubleshoot common error messages.</p>
+<h2> Connection error</h2>
+<p><img src="/hc/en-us/article_attachments/115000622366/Connection_Error.jpg" alt="This image shows a connection error message" width="327" height="232" />   </p>
+<h2>Network Error Message</h2>
+<p><img src="/hc/en-us/article_attachments/115000613923/network_error.jpg" alt="This image shows a network error message" width="337" height="232" /></p>
+<p>The Connection or Network Error messages indicates that MileIQ could not connect to a network to load your drive information. Drives will still be tracked and available as soon as MileIQ is able to connect to a network.</p>
+<p>To resolve, try the following steps:</p>
+<ol>
+<li>Turn on Wi-Fi on your mobile device. </li>
+<li>Turn your mobile device's network off and then on again. </li>
+<li>Restart your mobile device. </li>
+<li>Confirm that the date and time on your device is set to the correct time.</li>
+<li>Connect to Wi-Fi on a different network.</li>
+<li>Make sure the MileIQ mobile app is up to date.</li>
+<ul>
+<li>On iPhones, you can update to the latest version of MileIQ by opening the App Store app on your device &gt; Updates &gt; MileIQ &gt; Update</li>
+<li>On Androids, you can update the Android app by going to Play Store &gt; Settings Button (at the top left) &gt; My apps &gt; MileIQ &gt; Update</li>
+</ul>
+</ol>
+<p>If the steps above haven't fixed the issue, it's likely a temporary outage that will resolve shortly. There is no loss of data when these outages occur, and drives will be available as soon as things are back up and running.</p>
+<h2>Concur Errors</h2>
+<p><img src="/hc/en-us/article_attachments/115000624006/concur_error.png" alt="This image shows a Concur error message" width="425" height="177" /> </p>
+<p>There are a few common errors you can receive when reporting your mileage to Concur, and most can be easily resolved based on the type of action you were taking.</p>
+<p>Double check the items below to see if any apply to your case:</p>
+<p>    1. <strong>Reporting to non-default Concur settings.</strong> Currently, MileIQ can only report to Concur if you have the default expense types setup in your Concur account. If you are using non-default expense types, please get in touch with your Concur rep to restore them to a format that will allow exporting by MileIQ.</p>
+<p>    2. <strong>The "To" or "From" location exceeds 48 characters.</strong> Concur does not allow for start and end locations to have over 48 characters. Please rename these locations to something shorter and the report will then go through.</p>
+<p>    3. <strong>The report you're trying to export to has already been submitted.</strong> Please create a new report from within Concur for submission. Then, pick that new report from the MileIQ interface to submit to.</p>
+<p>Concur errors will automatically generate a report that gets sent to our Customer Success team and someone will respond with specific troubleshooting steps shortly.</p>
+<p><a href="https://support.mileiq.com/hc/en-us/articles/115001046086-Concur-Reporting-Best-Practices%20">To see our Concur Reporting Best Practices, click here</a></p>
+<h2>Password Token Error</h2>
+<p><img src="/hc/en-us/article_attachments/115000624106/password_token_error.png" alt="This image shows a password token error" width="547" height="139" /></p>
+<p>The "error occurred. token already used" message you received means either the password link has expired (if it's older than 48 hours) or a new password reset link has been requested.</p>
+<p>Please try resetting your password again from the <a href="https://dashboard.mileiq.com/login/resetPassword?from=login" target="_blank" rel="noopener">Forgot Password</a> page. Enter your email address and then use the latest password reset email to reset your password.</p>
+<p> </p>
+<p><strong>Have additional questions?</strong> Reach out to our Customer Success team using one of the options outlined here: <a href="https://support.mileiq.com/hc/en-us/articles/215736743-How-to-Get-Help" target="_blank" rel="noopener">How to: Get Help</a>.</p></div>
+
+      <div class="article-attachments">
+        <ul class="attachments">
+          
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Article footer -->
+    <footer>
+      
+      <div class="article-votes">
+        <span class="article-votes-question">Was this article helpful?</span>
+        <div class="article-votes-controls" role='radiogroup'>
+          <a role="radio" rel="nofollow" class="button article-vote article-vote-up" title="Yes" aria-selected="false" data-helper="vote" data-item="article" data-type="up" data-id="115000270243" data-upvote-count="0" data-vote-count="7" data-vote-sum="-7" data-vote-url="/hc/en-us/articles/115000270243/vote" data-value="null" data-label="0 out of 7 found this helpful" data-selected-class="null" href="#"></a>
+          <a role="radio" rel="nofollow" class="button article-vote article-vote-down" title="No" aria-selected="false" data-helper="vote" data-item="article" data-type="down" data-id="115000270243" data-upvote-count="0" data-vote-count="7" data-vote-sum="-7" data-vote-url="/hc/en-us/articles/115000270243/vote" data-value="null" data-label="0 out of 7 found this helpful" data-selected-class="null" href="#"></a>
+        </div>
+        <small class="article-votes-count">
+          <span class="article-vote-label" data-helper="vote" data-item="article" data-type="label" data-id="115000270243" data-upvote-count="0" data-vote-count="7" data-vote-sum="-7" data-vote-url="/hc/en-us/articles/115000270243/vote" data-value="null" data-label="0 out of 7 found this helpful">0 out of 7 found this helpful</span>
+        </small>
+      </div>
+      
+
+    </footer>
+    
+  </div>
+  
+  <div class="sidebar-articles">
+    
+  <section class="related-articles">
+    
+      <h3 class="related-articles-title">Related articles</h3>
+    
+    <ul>
+      
+        <li>
+          <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGkEp%2BHbDDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCKPdjMYaADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSIxL2hjL2VuLXVzL2FydGljbGVzLzIxNTczNjc0My1Ib3ctdG8tR2V0LUhlbHAGOwhUOglyYW5raQY%3D--b780979360d65cdbd75f64f272863b9a223928f4" rel="nofollow">How to: Get Help</a>
+        </li>
+      
+        <li>
+          <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGkEy8UlDDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCKPdjMYaADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSI%2FL2hjL2VuLXVzL2FydGljbGVzLzIwMzgwMjA1OS1XaGF0LWlmLXRoZS1hcHAtZG9lc24tdC1vcGVuLQY7CFQ6CXJhbmtpBw%3D%3D--33b8f1af0e1f20d3394b3a3f651914464ac1fbab" rel="nofollow">What if the app doesn&#39;t open?</a>
+        </li>
+      
+        <li>
+          <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCEa0mMYaADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCKPdjMYaADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJML2hjL2VuLXVzL2FydGljbGVzLzExNTAwMTA0NjA4Ni1Db25jdXItTWlsZWFnZS1SZXBvcnRpbmctQmVzdC1QcmFjdGljZXMGOwhUOglyYW5raQg%3D--b65b47320daec28bc1c20d779236bd4fa12950a0" rel="nofollow">Concur Mileage Reporting Best Practices</a>
+        </li>
+      
+        <li>
+          <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGkESyYCDToYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCKPdjMYaADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJBL2hjL2VuLXVzL2FydGljbGVzLzIxODI0NDY4My1XZWxjb21lLXRvLXRoZS1NaWxlSVEtRGFzaGJvYXJkBjsIVDoJcmFua2kJ--7e5952aae1d1f6008275711a2cf2b48c1fb6ca18" rel="nofollow">Welcome to the MileIQ Dashboard</a>
+        </li>
+      
+        <li>
+          <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGkEeSIwDDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCKPdjMYaADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJDL2hjL2VuLXVzL2FydGljbGVzLzIwNDQ4MTE0NS1XZWItZGFzaGJvYXJkLXN5c3RlbS1yZXF1aXJlbWVudHMGOwhUOglyYW5raQo%3D--9829fb6f873473fef9731fd65fd61876a9362ba9" rel="nofollow">Web dashboard system requirements</a>
+        </li>
+      
+    </ul>
+  </section>
+
+
+  </div>
+</div>
+  </main>
+
+  <footer class="footer">
+  
+  <!-- Footer top -->
+  <div class="footer-top">
+    <div class="container">
+      <a href="/hc/en-us/requests/new" data-type="contact">
+        <div>
+          <span>Can't find your answer here?</span>
+        	Contact Us
+        </div>
+      </a>
+      <a href="/hc/en-us/requests" data-type="login">
+        <div>
+          <span>Want to sign in to Zendesk?</span>
+          Log in to view Your Tickets
+        </div>
+      </a>
+      <a href="https://mileiq.com/blog" data-type="blog">
+        <div>
+          <span>Want to read more about us?</span>
+          Visit the Blog
+        </div>
+      </a>
+    </div>
+  </div>
+  
+  <!-- Footer middle -->
+  <div class="footer-middle container">
+    <div class="footer-store">
+    	<img src="//theme.zdassets.com/theme_assets/627138/973ab72498daf6090d45d8ef4ee5ca2db1efea36.svg" alt="Logo" />
+      
+      <div class="footer-badges">
+        <a href="https://itunes.apple.com/us/app/mileiq-mileage-log-business-expense-tracker/id578830929?mt=8">
+          <img src="//theme.zdassets.com/theme_assets/627138/39885507c5baf263a6aa077a4d582e747c8a48ff.png" alt="Logo" />
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.mobiledatalabs.mileiq&hl=en">
+          <img src="//theme.zdassets.com/theme_assets/627138/8afeefe3c2b30f80a2910584dba5385d80c8d26c.png" alt="Logo" />
+        </a>
+      </div>
+    </div>
+    
+    <div class="footer-nav">
+      <div class="footer-nav-item">
+        <h4>Our Products</h4>
+        <a href="https://dashboard.mileiq.com/login">Dashboard Login</a>
+        <a href="https://www.mileiq.com/howitworks">MileIQ How It Works</a>
+      </div>
+      <div class="footer-nav-item">
+        <h4>Our Programs</h4>
+        <a href="https://www.mileiq.com/teams">MileIQ for Teams</a>
+        <a href="https://www.mileiq.com/taxpros">Tax Professionals</a>
+      </div>
+      <div class="footer-nav-item">
+        <h4>Connect With Us</h4>
+        <a href="https://www.mileiq.com/about">About MileIQ</a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer bottom -->
+  <div class="footer-bottom container">
+  	<img src="//theme.zdassets.com/theme_assets/627138/f033f620b20b6e8e19b8ec16047f30ec9a74fba2.png" alt="Microsoft Logo" />
+    
+    <div class="footer-copyright">
+    	© 2017 Microsoft Corporation. All rights reserved. This site is hosted for Microsoft by Zendesk. Click <a href="https://www.zendesk.com/company/customers-partners/cookie-policy" id="zdlink">here</a> to learn about Zendesk’s cookies.
+      <!--<div>-->
+        <a href="https://www.mileiq.com/privacy" class="footer-tiny-link">Privacy &amp; Cookies</a>
+        <a href="https://www.mileiq.com/terms" class="footer-tiny-link">Terms of Use</a>
+      <!--</div>-->
+    </div>
+  </div>
+</footer>
+
+
+
+
+  <!-- / -->
+
+  
+  <script src="//static.zdassets.com/hc/assets/en-us.ea5bb565f70118f3e6f7.js"></script>
+  <script src="https://mileiq.zendesk.com/auth/v2/host.js" data-brand-id="259889" data-return-to="https://support.mileiq.com/hc/en-us/articles/115000270243-Error-Messages" data-theme="hc" data-locale="en-us" data-auth-origin="259889,true,true"></script>
+
+  <script type="text/javascript">
+  /*
+
+    Greetings sourcecode lurker!
+
+    This is for internal Zendesk and legacy usage,
+    we don't support or guarantee any of these values
+    so please don't build stuff on top of them.
+
+  */
+
+  HelpCenter = {};
+  HelpCenter.account = {"subdomain":"mileiq","environment":"production","name":"MileIQ Help Center"};
+  HelpCenter.user = {"identifier":"da39a3ee5e6b4b0d3255bfef95601890afd80709","email":null,"name":null,"role":"anonymous","avatar_url":"https://assets.zendesk.com/hc/assets/default_avatar.png","is_admin":false,"organizations":[],"groups":[]};
+  HelpCenter.internal = {"asset_url":"//static.zdassets.com/hc/assets/","web_widget_asset_composer_url":"https://static.zdassets.com/ekr/snippet.js","current_session":{"locale":"en-us","csrf_token":"hc:hcobject:server:MWFQ6ERoXG0PhFTSDCuk00ugze0OQ6cofZ5NcPw3xg1+fwbekZMWv7Z8vrZ3GTwR6xQceSlMrNv7uycVmr7TEQ==","shared_csrf_token":null},"settings":{"zopim_enabled":true},"usage_tracking":{"event":"article_viewed","data":"BAh7CDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoPYXJ0aWNsZV9pZGwrCKPdjMYaADoKX21ldGF7CzoPYWNjb3VudF9pZGkDwpEJOhNoZWxwX2NlbnRlcl9pZGkEc37tCzoNYnJhbmRfaWRpAzH3AzoMdXNlcl9pZDA6DnVzZXJfcm9sZUkiDmFub255bW91cwY7BlQ7AEkiCmVuLXVzBjsGVA==--3164c76e274ac03efd45418e04618695aa129ea7","url":"https://support.mileiq.com/hc/tracking/events?locale=en-us"},"current_record_id":"115000270243","current_record_url":"/hc/en-us/articles/115000270243-Error-Messages","current_record_title":"Error Messages","search_results_count":null,"current_text_direction":"ltr","current_brand_url":"https://mileiq.zendesk.com","current_host_mapping":"support.mileiq.com","current_path":"/hc/en-us/articles/115000270243-Error-Messages","authentication_domain":"https://mileiq.zendesk.com","show_autocomplete_breadcrumbs":true,"rollbar_config":{"enabled":true,"endpoint":"https://rollbar-us.zendesk.com/api/1/item/","accessToken":"731a5a953e9a4b7ab6cac9623f50c732","captureUncaught":true,"captureUnhandledRejections":true,"payload":{"environment":"production","client":{"javascript":{"source_map_enabled":true,"code_version":"ad7df13e00e2d3b298d12c3f6943c0b7016a368c","guess_uncaught_frames":true}}}},"user_info_changing_enabled":false,"has_user_profiles_enabled":false,"user_aliases_enabled":false,"has_anonymous_kb_voting":true,"has_multi_language_help_center":true,"mobile_device":false,"mobile_site_enabled":false,"show_at_mentions":false,"embeddables_config":{"embeddables_web_widget":true,"embeddables_connect_ipms":false},"base_domain":"zendesk.com","answer_bot_subdomain":"static","plans_url":"https://support.mileiq.com/hc/admin/plan?locale=en-us","manage_content_url":"https://support.mileiq.com/hc/en-us","arrange_content_url":"https://support.mileiq.com/hc/admin/arrange_contents?locale=en-us","general_settings_url":"https://support.mileiq.com/hc/admin/general_settings?locale=en-us","user_segments_url":"https://mileiq.zendesk.com/knowledge/user_segments?brand_id=259889","has_community_enabled":false,"has_user_segments":true,"has_answer_bot_web_form_enabled":false,"billing_url":"/access/return_to?return_to=https://mileiq.zendesk.com/admin/billing/subscription","has_answer_bot":true,"has_block_answer_bot_embeddable":false,"answer_bot_management_url":"/access/return_to?return_to=https://mileiq.zendesk.com/agent/admin/answer_bot","is_account_owner":false,"theming_cookie_key":"hc-da39a3ee5e6b4b0d3255bfef95601890afd807091-preview","is_preview":false,"has_guide_user_segments_search":true,"has_alternate_templates":false,"arrange_articles_url":"https://mileiq.zendesk.com/knowledge/arrange?brand_id=259889","article_verification_url":"https://mileiq.zendesk.com/knowledge/verification?brand_id=259889","has_article_verification":false,"guide_language_settings_url":"https://support.mileiq.com/hc/admin/language_settings?locale=en-us","docs_importer_url":"https://mileiq.zendesk.com/knowledge/import_articles?brand_id=259889","community_settings_url":"https://mileiq.zendesk.com/knowledge/community_settings?brand_id=259889","gather_plan_state":"subscribed","search_settings_url":"https://mileiq.zendesk.com/knowledge/search_settings?brand_id=259889","has_multibrand_search_in_plan":false,"theming_api_version":1,"has_merged_stats_endpoints":false,"has_pci_credit_card_custom_field":true,"log_i18n_global_usage_to_rollbar":false};
+</script>
+
+  <script src="//static.zdassets.com/hc/assets/hc_enduser-97817fa6e1132a1e0d97e297bd3cee5d.js"></script>
+</body>
+</html>

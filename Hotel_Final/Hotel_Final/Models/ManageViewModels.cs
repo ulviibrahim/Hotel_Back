@@ -13,6 +13,9 @@ namespace Hotel_Final.Models
         public string PhoneNumber { get; set; }
         public bool TwoFactor { get; set; }
         public bool BrowserRemembered { get; set; }
+        public Testimonial Comment { get; set; }
+        public ApplicationUser Us { get; set; }
+
     }
 
     public class ManageLoginsViewModel
@@ -44,18 +47,18 @@ namespace Hotel_Final.Models
     {
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Current password")]
+        [Display(Name = "Hazırki şifrə")]
         public string OldPassword { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = " {0} Ən azı {2} xarakter olmalıdır.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "New password")]
+        [Display(Name = "Yeni şifrə")]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm new password")]
-        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+        [Display(Name = "Yeni şifrəni təsdiqlə")]
+        [Compare("NewPassword", ErrorMessage = "Şifrələr uyğun gəlmir.")]
         public string ConfirmPassword { get; set; }
     }
 

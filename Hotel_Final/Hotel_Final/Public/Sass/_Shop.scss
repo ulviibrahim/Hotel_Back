@@ -60,6 +60,7 @@
         font-size: 25px;
         margin-right: 14px;
         color: #f76904;
+        margin-top:10px
     }
     span{
         position: absolute;
@@ -153,12 +154,14 @@
         margin-top: 30px;
 
         @media screen and (max-width: 767px) {
-            display:flex;
-            justify-content:center;
-            li{
-                width:unset;
-                a{
-                    font-size:12px
+            display: flex;
+            justify-content: center;
+
+            li {
+                width: unset;
+
+                a {
+                    font-size: 12px
                 }
             }
         }
@@ -185,6 +188,11 @@
                 margin-right: 50px;
                 transition: all .7s;
                 opacity: 0;
+            }
+
+            .fs {
+                opacity: 1;
+                margin-right: 3px
             }
 
             &:hover i {
@@ -226,6 +234,8 @@
             }
         }
     }
+
+    
     // .img{
     //     width: 100%;
     // position: relative;
@@ -266,4 +276,24 @@
     // }
     //}
 }
+.form-back {
+    background-color: #6c757dc7;
+    border-radius: 15px;
+    padding: 6%;
+    form{
+        margin-right:-25%
+    }
+}
 
+.paid {
+    position: absolute;
+    font-size: 14px;
+    padding: 3px 10px;
+    font-weight: 700;
+    top: 17px;
+    left: -5px;
+    transform: rotate(316deg);
+    color: white !important;
+    background-color: #025602;
+    border-radius: 8px 8px;
+}
