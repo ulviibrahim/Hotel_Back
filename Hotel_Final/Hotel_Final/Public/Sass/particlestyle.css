@@ -96,6 +96,7 @@ body {
 
 #particles-js {
     height: 100%;
+    width:100%;
     position: absolute;
     z-index: -5;
     background-color: #250491;

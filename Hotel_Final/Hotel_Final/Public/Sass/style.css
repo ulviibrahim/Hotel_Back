@@ -442,7 +442,8 @@ footer {
     padding: 7px 15px;
     color: white; }
   #Paid ul {
-    margin-top: 30px; }
+    margin-top: 30px;
+    width: 100%; }
     @media screen and (max-width: 767px) {
       #Paid ul {
         display: flex;
@@ -470,6 +471,9 @@ footer {
         margin-right: 50px;
         transition: all .7s;
         opacity: 0; }
+        @media screen and (max-width: 767px) {
+          #Paid ul li i {
+            margin-right: 5px; } }
       #Paid ul li .fs {
         opacity: 1;
         margin-right: 3px; }
@@ -497,11 +501,14 @@ footer {
         opacity: 1; }
 
 .form-back {
-  background-color: #6c757dc7;
+  background-color: #262222;
   border-radius: 15px;
   padding: 6%; }
   .form-back form {
     margin-right: -25%; }
+    .form-back form input:focus {
+      outline: none;
+      box-shadow: none; }
 
 .paid {
   position: absolute;
@@ -514,5 +521,69 @@ footer {
   color: white !important;
   background-color: #025602;
   border-radius: 8px 8px; }
+
+.help-block {
+  color: red; }
+
+#OpenModal {
+  font-size: 16px;
+  text-decoration: none;
+  color: green;
+  font-weight: bold; }
+  #OpenModal i {
+    color: #b99470;
+    font-size: 16px;
+    margin-left: 8px;
+    transition: all .5s;
+    opacity: 0; }
+  #OpenModal:hover i {
+    transform: rotate(180deg);
+    opacity: 1; }
+
+.search {
+  width: 20%;
+  top: 180px;
+  left: 44px; }
+
+.searchlabel {
+  position: fixed;
+  left: 50px;
+  top: 130px;
+  font-weight: bold;
+  font-size: 21px;
+  color: #1f0c6c; }
+
+.ordercount::-webkit-outer-spin-button,
+.ordercount::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+.ordercount {
+  border-radius: 5px;
+  height: 25px;
+  margin-left: 12px;
+  border: 1px solid lightgray;
+  background-color: transparent; }
+
+.ordercount:focus {
+  outline: none; }
+
+.Main-div {
+  border-radius: 24px;
+  padding: 50px;
+  background-color: #0a7b247d;
+  box-shadow: 0px 0px 6px #01080e; }
+  .Main-div .card {
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #f8f9fa;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    box-shadow: 0 0px 5px white;
+    border-radius: 20px;
+    margin-top: 50px !important; }
 
 /*# sourceMappingURL=style.css.map */

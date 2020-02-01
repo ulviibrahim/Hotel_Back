@@ -17,8 +17,8 @@ namespace Hotel_Final.Controllers
         {
             var model = new vwProdCat()
             {
-                Categories = db.Categories.OrderBy(cat=>cat.Name).ToList(),
-                Products = db.Products.OrderBy(prod=>prod.OrderBy).ToList()
+                Categories = db.Categories.OrderBy(cat => cat.Id).Take(4).ToList(),
+                Products = db.Products.Where(prod=>prod.CategoryId<5).OrderBy(prod => prod.OrderBy).ToList()
             };
             return View(model);
         }
@@ -26,7 +26,7 @@ namespace Hotel_Final.Controllers
         {
             if (id == null)
             {
-                return Json( db.Products.Select(prod=> new { prod.Name, prod.OrderBy, prod.Price, prod.Id }).ToList(), JsonRequestBehavior.AllowGet);
+                return Json( db.Products.Where(prod => prod.CategoryId < 5).OrderBy(prod => prod.OrderBy).Select(prod=> new { prod.Name, prod.OrderBy, prod.Price, prod.Id }).ToList(), JsonRequestBehavior.AllowGet);
             }
             var product = db.Products.Where(prod => prod.CategoryId == id).OrderBy(o => o.OrderBy).ToList();
             if (product.Count==0)
@@ -87,7 +87,7 @@ namespace Hotel_Final.Controllers
         }
 
         [HttpPost]
-        public ActionResult SendOrder( string Email,string Subject)
+        public ActionResult SendOrder(string Subject)
         {
 
 
@@ -97,7 +97,7 @@ namespace Hotel_Final.Controllers
             }
 
             var orderId = int.Parse(Subject);
-            Email = db.OrderHistories.Find(orderId).ApplicationUser.Email;
+           string Email = db.OrderHistories.Find(orderId).ApplicationUser.Email;
 
 
 

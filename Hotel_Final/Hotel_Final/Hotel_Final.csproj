@@ -177,6 +177,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\PaidController.cs" />
+    <Compile Include="Controllers\RestorantController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -215,6 +216,18 @@
     <Compile Include="Migrations\202001141918438_at_last.cs" />
     <Compile Include="Migrations\202001141918438_at_last.Designer.cs">
       <DependentUpon>202001141918438_at_last.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001310943275_remove_orderby.cs" />
+    <Compile Include="Migrations\202001310943275_remove_orderby.Designer.cs">
+      <DependentUpon>202001310943275_remove_orderby.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001310944508_remove_photo.cs" />
+    <Compile Include="Migrations\202001310944508_remove_photo.Designer.cs">
+      <DependentUpon>202001310944508_remove_photo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001311228437_remove_res.cs" />
+    <Compile Include="Migrations\202001311228437_remove_res.Designer.cs">
+      <DependentUpon>202001311228437_remove_res.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -331,6 +344,7 @@
     <Content Include="Views\Cash\Index.cshtml" />
     <Content Include="Views\Orders\OrderHistory.cshtml" />
     <Content Include="Views\Orders\Test.cshtml" />
+    <Content Include="Views\Restorant\Restoran.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -380,6 +394,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001141918438_at_last.resx">
       <DependentUpon>202001141918438_at_last.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001310943275_remove_orderby.resx">
+      <DependentUpon>202001310943275_remove_orderby.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001310944508_remove_photo.resx">
+      <DependentUpon>202001310944508_remove_photo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001311228437_remove_res.resx">
+      <DependentUpon>202001311228437_remove_res.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

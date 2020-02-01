@@ -13,6 +13,7 @@ namespace Hotel_Final.Models
     {
         public int PayBalance { get; set; }
         public string RoomNumber { get; set; }
+        public string UsName { get; set; }
         public virtual  ICollection <OrderHistory> OrderHistories { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

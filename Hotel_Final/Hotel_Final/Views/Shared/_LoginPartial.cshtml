@@ -11,17 +11,17 @@
                 var controllerName = this.ViewContext.RouteData.Values["Controller"].ToString();
             }
             @if (controllerName != "Manage") { 
-            @Html.ActionLink( "My Profile ", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            @Html.ActionLink( "Profil ", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
                 }
         </li>
-        <li><a class="btnLogin ml-4" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+        <li><a class="btnLogin ml-4" href="javascript:document.getElementById('logoutForm').submit()">Çıxış</a></li>
     </ul>
     }
 }
 else
 {
     <ul class="list-unstyled logright d-flex mt-2">
-        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new {@class="btnLogin", id = "registerLink" })</li>
-        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new {@class="ml-4 btnLogin", id = "loginLink" })</li>
+        <li>@Html.ActionLink("Qeydiyyat", "Register", "Account", routeValues: null, htmlAttributes: new {@class="btnLogin", id = "registerLink" })</li>
+        <li>@Html.ActionLink("Daxil ol", "Login", "Account", routeValues: null, htmlAttributes: new {@class="ml-4 btnLogin", id = "loginLink" })</li>
     </ul>
 }

@@ -1,8 +1,8 @@
 ﻿
-window.onload = function () {
+
 
     $(document).ready(function () {
-       
+        $(".load").addClass("d-none")
         var cart = [];
         $("#homeslide .owl-carousel").owlCarousel({
             items: 1,
@@ -143,7 +143,7 @@ window.onload = function () {
             <th scope="row">${product.OrderBy}</th>
             <td>${product.Name}</td>
             <td>${product.Price}$</td>
-            <td><input style="width:50px" min="1" type="number" name="Countorder" value="1" /></td>
+            <td><input style="width:40px" min="1" type="number" class="ordercount text-center" name="OrderCount" value="1" /></td>
 
             <td>
               <a id="OpenModal" href="/Paid/AddOrder" data-id="${product.Id}">Əlavə et <i class="fas fa-arrow-left"></i></a>
@@ -161,15 +161,14 @@ window.onload = function () {
 
         $(document).on("click", "#OpenModal", function (s) {
             s.preventDefault();
-            $(".load").removeClass("d-none")
-            console.log($(this).parents("tr").find("input").val())
+            console.log($(this).parents().find(".ordercount").val())
             
             $.ajax({
                 method: "get",
                 url: "/Paid/AddOrder",
                 data: create = {
                     id: $(this).data("id"),
-                    count: $(this).parents("tr").find("input").val()
+                    count: $(this).parents().find(".ordercount").val()
                 },
                 dataType: "json",
                 success: function (response) {
@@ -184,12 +183,13 @@ window.onload = function () {
                     if (response.status === 200) {
 
 
-                        toastr.success("Sifarisiniz qebul olundu")
+                        toastr.success("your order confirmed")
 
                         $("input[name=Subject]").val(`${response.id}`)
                         console.log($("input[name=Email]").val())
                         console.log($("input[name=Subject]").val())
                         $("#yoxla").submit();
+
                     }
                 },
                 error: function (e) {
@@ -201,23 +201,46 @@ window.onload = function () {
             $(this).parents("tr").find("input").val("1")
 
         });
+        $("#yoxla").submit(function (e) {
+            var form=$(this)
+            e.preventDefault();
+            $.ajax({
+                url: form.attr("action"),
+                type: form.attr("method"),
+                data: { Subject: $("input[name=Subject]").val() },
+                success: function (response) {
+                    console.log(response)
+                    toastr.success("Sifarisiniz qebul olunub")
+                }
+            })
 
-        $(document.body).click(function (e) {
-                console.log($(e.target))
+        })
 
-            if ($(e.target)=="body") {
-                alert("table");
+      
+
+        //$(document.body).click(function (e) {
+        //        console.log($(e.target))
+
+        //    if ($(e.target)=="body") {
+        //        alert("table");
               
 
-            } else {
-                $("#myInput").focus();
-            }
+        //    } else {
+        //        $("#myInput").focus();
+        //    }
            
-        });
+        //});
         $(document).on("keyup", "#myInput", function () {
 
             var value = $(this).val().toLowerCase();
             $("#ProductTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+        $(document).on("keyup", ".search", function () {
+
+            var value = $(this).val().toLowerCase();
+            $(".card").filter(function () {
                 $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
             });
         });
@@ -268,6 +291,8 @@ window.onload = function () {
                 success: function (response) {
                     if (response.status === 200) {
                         $("#mustpay").html("0%")
+                        $(".OrderInfo").hide();
+                        $(".form-back").hide();
                         toastr.success(response.message)
                         console.log("text")
                     }
@@ -278,6 +303,8 @@ window.onload = function () {
                 }
             })
         })
+        
+        $.validate({ modules: 'location, date, security, file'});
+       
     });
 
-}

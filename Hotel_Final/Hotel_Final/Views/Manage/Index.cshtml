@@ -1,22 +1,23 @@
 ﻿@model Hotel_Final.Models.IndexViewModel
 @{
-    ViewBag.Title = "Hesabına düzəliş et";
+    ViewBag.Title =Model.Us.UsName+  " hesabına düzəliş et";
 }
-<div id="particles-js" class="container-fluid" ></div>
+
+<div id="particles-js"></div>
 
 <div class="container partmain text-white">
     <div class="row">
         <div class="col-lg-6 col-md-12 col-sm-12">
 
 
-            <h2>@ViewBag.Title.</h2>
+            <h4>@ViewBag.Title.</h4>
 
             <p class="text-info">@ViewBag.StatusMessage</p>
             <div>
                 <dl>
                     <dt>Ödəniləcək məbləğ:</dt>
 
-                    @if (@Model.Us.PayBalance != 0)
+                    @if (Model.Us.PayBalance != 0)
                     {
                         <dd> @Model.Us.PayBalance  $</dd>
 

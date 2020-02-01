@@ -9,6 +9,8 @@
 @{
     ViewBag.Title = "Home Page";
     List<Testimonial> test = ViewBag.Testimonial;
+    Settings setting = ViewBag.Setting;
+
 }
 
 <!-- Start Main -->
@@ -30,7 +32,7 @@
                                 <div class="overlaypage">
 
                                     <h3 class="text-white">
-                                        @Slider.Title
+                                        @setting.Logo @Slider.Title
                                     </h3>
                                     <p class="margin animated  fadeIn delay-1s">
                                         @Slider.Desc
@@ -213,7 +215,7 @@
 
 
                                             </ul>
-                                            <h6 class="mb-5">@rate.ApplicationUser.UserName</h6>
+                                            <h6 class="mb-5">@rate.ApplicationUser.UsName</h6>
                                             <p>@rate.Date.ToString("dd MM yyyy")</p>
                                         </div>
                                     </div>

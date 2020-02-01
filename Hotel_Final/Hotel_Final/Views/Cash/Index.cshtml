@@ -10,23 +10,24 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="text-white  mb-5 h3">@setting.Logo hoteline movcud borcunuz: <span id="mustpay" class="text-warning font-weight-bold">@Model.PayBalance$</span>-dir.</div>
-                <ol class="text-white">
+                <div class="OrderInfo">
+                    <ol class="text-white">
 
-                    @foreach (var order in Model.OrderHistories)
-                    {
-                        if (order.TotalPrice > 1 && order.isDeleted == false)
+                        @foreach (var order in Model.OrderHistories)
                         {
-                            <li class="h5">
-                                <span>@order.Product.Name   </span>
-                                <span>    @order.TotalPrice$</span>
+                            if (order.TotalPrice > 1 && order.isDeleted == false)
+                            {
+                                <li class="h5">
+                                    <span>@order.Product.Name   </span>
+                                    <span>    @order.TotalPrice$</span>
 
-                            </li>
+                                </li>
+                            }
+
                         }
-                       
-                    }
-                </ol>
-                <button type="button" id="opencardform" class="mt-4  btn btn-success"> Odenise basla</button>
-
+                    </ol>
+                    <button type="button" id="opencardform" class="mt-4  btn btn-success"> Odenise basla</button>
+                </div>
             </div>
             <div class="col-lg-5 offset-lg-1">
                 <div class="form-back d-none">
@@ -36,21 +37,36 @@
                         </div>
                         <div class="form-group">
                             <label class="text-white h5" for="CardNumber">Card nomresi</label>
-                            <input autocomplete="off" type="number" style="width:70%" class="text-center form-control" name="CardNumber" maxlength="16" value="" />
+                            <input required autocomplete="off" type="number" style="width:70%" max="16" class="form-control" name="CardNumber"
+                                   data-validation="required length" value="" 
+                                   
+                                   data-validation-length="16"
+                                   data-validation-error-msg-required="Kart nomresini duzgun yazin"
+                                   data-validation-error-msg-length="Maksimum 16 reqem daxil ede bilersiniz"
+
+                                   />
                         </div>
                         <div style="width:70%" class="d-flex  form-group">
                             <div>
                                 <label class="text-white h5" for="inputgroup">Tarix</label>
-                                <div id="inputgroup" style="width:50%" class="input-group">
+                                <div id="inputgroup" style="width:50%" class="input-group" >
 
-                                    <input type="number" maxlength="2" max="12" class="form-control ">
-                                    <input type="number" maxlength="2" min="20" class="form-control">
+                                    <input type="number" maxlength="2" max="12" min="1" class="form-control" data-validation="required length"  data-validation-error-msg-required="*"
+                                   data-validation-error-msg-length="max2"
+                                    data-validation-length="max2"
+                                           >
+
+                                    <input type="number" maxlength="2" min="20" class="form-control"  data-validation="required length"  data-validation-error-msg-required="*"
+                                   data-validation-error-msg-length="max2"
+                                    data-validation-length="max2">
                                 </div>
                             </div>
                             <div style="width:30%">
                                 <label class="text-white h5" for="cvc">CVC</label>
 
-                                <input type="number" id="cvc" maxlength="2" max="12" class="form-control ">
+                                <input type="number" id="cvc"  maxlength="2" min="3" data-validation="required length"  data-validation-error-msg-required="*"
+                                   data-validation-error-msg-length="max3"
+                                    data-validation-length="max3"class="form-control ">
 
                             </div>
                         </div>
@@ -72,4 +88,5 @@
 
     <script type="text/javascript" src="~/Scripts/particles.min.js"></script>
     <script type="text/javascript" src="~/Scripts/app.js"></script>
+   
 }

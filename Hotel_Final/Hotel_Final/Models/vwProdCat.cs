@@ -7,7 +7,7 @@ namespace Hotel_Final.Models
 {
     public class vwProdCat
     {
-      public  List<Product> Products ;
-      public  List<Category> Categories ;
+        public List<Product> Products;
+        public List<Category> Categories;
     }
 }

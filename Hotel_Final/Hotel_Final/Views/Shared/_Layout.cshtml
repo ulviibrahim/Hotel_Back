@@ -48,7 +48,7 @@
                         <a class="@(controllerName=="home"?"active ":"")nav-link" href=@Url.Action("Index", "Home")>Əsas səhifə <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="@(controllerName=="services"?"active ":"")nav-link" href=@Url.Action("Index","Services")>Xidmətlər <span class="sr-only">(current)</span></a>
+                        <a class="@(controllerName=="restorant"?"active ":"")nav-link" href=@Url.Action("Restoran","Restorant")>Restoran <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="@(controllerName=="paid"?"active ":"") nav-link" href=@Url.Action("Index","Paid")>İstəklər <span class="sr-only">(current)</span></a>
@@ -72,9 +72,9 @@
     </header>
     <!-- Header end -->
     @RenderBody()
-<div style="width: 100%; height: 401px;" class="load d-none fixed-top">
-    <img style="background-color: #343a404a; width: 100%; height: 100vh" src="~/Public/img/Spin-Preloader.gif" alt="Alternate Text" />
-</div>
+    <div style="width: 100%; height: 401px;" class="load fixed-top">
+        <img style="background-color: #343a404a; width: 100%; height: 100vh" src="~/Public/img/Spin-Preloader.gif" alt="Alternate Text" />
+    </div>
 
     <!-- Start footer -->
     <footer>
@@ -144,14 +144,18 @@
 
 
     @Scripts.Render("~/bundles/jquery")
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+
     @RenderSection("scripts", required: false)
 
 
     @Scripts.Render("~/bundles/bootstrap")
-    @*<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
-    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>*@
+    @*<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>*@
     <script src="~/Public/owlcarousel/owl.carousel.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
     <script src="~/Scripts/main.js?time=@DateTime.Now.ToFileTime()"></script>
 </body>
 

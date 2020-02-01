@@ -1,0 +1,51 @@
+﻿@model Hotel_Final.Models.vwProdCat
+@{
+    ViewBag.Title = "Restoran";
+}
+    <div class="container">
+        <h1 class="text-center mt-5 mb-5">Restoran</h1>
+        <label class="mt-4 searchlabel" for="myInput">Axtar</label>
+        <input  autocomplete="off" type="text" class="mt-2 form-control search fixed-top" style="width:16%" placeholder="Search..">
+
+        <form id="yoxla" action="/Paid/SendOrder" method="post">
+
+            <input type="hidden" name="Email" value='' />
+            <input type="hidden" id="Subject" name="Subject" value="" />
+        </form>
+
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2  col-md-10 offset-md-1 col-sm-12">
+                <div class="Main-div container">
+
+                    @foreach (var category in Model.Categories)
+                    {
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <h4 style="color:red;font-weight:bold" class="card-title h-2">@category.Name</h4>
+                                @foreach (var prod in category.Products)
+                                {
+                                    <p class="font-weight-bold text-center text-danger h5">@prod.Name</p>
+
+                                    <span>Sifariş sayı: </span><input style="width:40px" min="1" type="number" class="ordercount  text-center" name="OrderCount" value="1" />
+                                    <br />
+                                    <p class="orderprice">Qiyməti: <span>@prod.Price $ </span></p>
+
+                                    
+
+                                    <a id="OpenModal" href="/Paid/AddOrder" data-id="@prod.Id">Əlavə et <i class="fas fa-arrow-left"></i></a>
+                                    <hr />
+                                }
+
+
+                            </div>
+                        </div>
+
+                    }
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>

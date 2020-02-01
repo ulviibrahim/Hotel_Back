@@ -59,7 +59,7 @@ namespace Hotel_Final.Models
         [Display(Name = "Password")]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "Yadda saxlasın?")]
         public bool RememberMe { get; set; }
 
 
@@ -83,7 +83,7 @@ namespace Hotel_Final.Models
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
+        [Display(Name = "Şifrəni təsdiqlə")]
         [Compare("Password", ErrorMessage = "Şifrələr eyni deyil.")]
         public string ConfirmPassword { get; set; }
 
@@ -91,6 +91,11 @@ namespace Hotel_Final.Models
 
         [Display(Name ="Otaq nömrəsi")]
         public string RoomNumber { get; set; }
+
+        [Required]
+
+        [Display(Name = "İstifadəçi adı")]
+        public string Username { get; set; }
 
     }
 
